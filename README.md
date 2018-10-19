@@ -6,7 +6,13 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo"
 ## User Stories
 
 - **404** - Como usuario hater deseo obtener una página de error 404 que me informe que la página solicitada no existe, lo que significa que estoy haciendo algo que "no hace sentido".
-- **500** - como usuario hater deseo obtener una página de error 505 que me informe que la página solicitada no esta disponible, plo que significa que alguien está haciendo que lo que significa que estoy haciendo algo que "no hace sentido".
+- **500** - Como usuario hater deseo obtener una página de error 505 que me informe que la página solicitada no esta disponible, lo que significa que alguien está "hateandome".
+- **sign up** - Como usuario hater deseo poder registrarme en la aplicación, por lo que podré acceder a un fornulario que me solicte la información necesaria.
+- **login** - Como usuario hater deseo poder acceder a la aplicación a partir de una vista de login, por lo que veré una vista solicitandome un usuario y un una constraseña.
+- **events list** - Como usuario hater deseo poder visualizar todas las acciones disponibles, por lo que dispondre de una burqguer menu que me expanderá mostrandome dichas opciones.
+- **events create** - Como usuario hater deseo poder crear mi propio contenido para ser "hateado" por los demás, por lo que dispondré en el menú desplegable un link de acceso al editor de contenido.
+- **events find** - Como usuario hater deseo poder acceder y visulizar contenido generado por los demás usuarios, por lo que dispondré de una barra de búsqueda que me muestre el contenido en base a los criterios de úsqueda que yo degina.
+- **profile view** - Como usuario hater deseo poder disponer de una vista de perfil donde poder visualizar y editar toda la información referente a mi, por lo que dispondré en el menú desplegable un enlace a la vista de mi perfil, con un botón de editar.
 
 
 As a hater I want to see a extremly hater error page when the super team screws it up so that I know that is not my fault
