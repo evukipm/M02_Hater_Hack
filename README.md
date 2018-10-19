@@ -10,25 +10,25 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 - **505** - Como hater deseo obtener una página de error 505 que me informe que la página solicitada no esta disponible, lo que significa que alguien está "hateandome".
 - **sign up** - Como hater deseo repartir mi odio, por lo que podré acceder a un formulario de registro que me solicite la información necesaria para empezar.
 - **login** - Como hater deseo poder acceder a la aplicación a partir de una vista de login, por lo que veré una vista solicitandome un usuario y un una constraseña.
-- **log out** - Como hater no quiero permanecer logeado, por eso necesito un botón que 
+- **log out** - Como hater no quiero permanecer logeado, por eso necesito un botón que me permita desconectarme.
 - **post list** - Como hater deseo poder visualizar todas las acciones disponibles, por lo que dispondré de una burguer menu que me mostrará dichas opciones.
 - **navigate** - Como hater quiero navegar por la página, por lo que necesito un menú cómodo por el que acceder a las diferentes zonas. 
 - **post create** - Como hater deseo poder crear mi propio contenido para ser "hateado" por los demás, por lo que dispondré en el menú desplegable un link de acceso al creador de contenido.
 - **post edit** - Como hater puedo equivocarme a la hora de crear mi contenido y quiero poder editarlo.
-- **post delete** - Como hater puedo querer borrar mis lloriqueos, por lo que necesito un botón de borrar para mis posts.
+- **post delete** - Como hater puedo querer borrar mis lloriqueos, por lo que necesito para mis psts un botón de borrar.
 - **post find** - Como hater deseo poder filtrar el contenido generado por los demás haters, por lo que dispondré de una barra de búsqueda que me muestre el contenido en base a los criterios de búsqueda que yo defina.
 - **profile view** - Como hater deseo poder disponer de una vista de perfil donde poder visualizar y editar toda la información referente a mí, por lo que dispondré en el menú desplegable un enlace a la vista de mi perfil, con un botón de editar.
-- **profile edit** - Como hater quier poder completar mi perfil o modificarlo, por lo que necesito una página de edición de perfil.
+- **profile edit** - Como hater quiero poder completar mi perfil o modificarlo, por lo que necesito una página de edición de perfil.
 
 ##Haterism
 
 - **haterism buttons** - Como hater lo que realmente quiero es hatear, para lo que tendré unos botones de opinión debajo de las entradas completamente anónimos, con los que podré expresar mi odio libremente.
 
-- **Haterism resume** - Como hater quiero saber a cuánta gente hateo y cuánta gente me hatea a mí. También el total de hate que he repartido y me han lanzado.
+- **Haterism resume** - Como hater quiero saber a cuánta gente profeso odio y cuánta gente me hatea a mí. También el total de hates que he repartido y me han lanzado.
 
 - **Hater level** - Como hater quiero saber cual es mi nivel de hater y, por supuesto, llegar al 100%.
 
-- **Profile with permissions** -Como hater me gustaría tener un perfil personalizado con información que solo yo pueda ver.
+- **Profile with permissions** - Como hater me gustaría tener un perfil personalizado con información que solo yo pueda ver.
 
 ## Backlog p 
 
@@ -75,7 +75,7 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
   - renderiza la vista de creación de contenido.
 - POST /posts/create
   - form (body)
-    - Titulo
+    - Título
     - Autor
     - Radio button para eleccion del tipo de contenido
     - Contenido a publicar.
