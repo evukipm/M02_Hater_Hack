@@ -15,7 +15,7 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 - **post edit and delete ** - Como hater puedo equivocarme a la hora de crear mi contenido y quiero poder editar o borrar mis lloriqueos.
 - **post find** - Como hater deseo poder filtrar el contenido generado por los demás haters, por lo que dispondré de una barra de búsqueda que me muestre el contenido en base a los criterios de búsqueda que yo defina.
 - **profile view** - Como hater deseo poder disponer de una vista de perfil donde poder visualizar y editar toda la información referente a mí, por lo que dispondré en el menú desplegable un enlace a la vista de mi perfil, con un botón de editar.
-- **haterism ** - Como hater lo que realmente quiero es hatear, para lo que tendré unos botones de opinión debajo de las entradas completamente anónimos, con los que podré expresar mi odio libremente.
+- **haterism** - Como hater lo que realmente quiero es hatear, para lo que tendré unos botones de opinión debajo de las entradas completamente anónimos, con los que podré expresar mi odio libremente.
 
 ## Backlog
 
