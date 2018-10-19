@@ -30,45 +30,41 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 
 ## ROUTES:
 
+## ROUTES:
+
 - GET / 
-  - renders the homepage
+  - renderiza la vista de la hommepage
 - GET /auth/signup
-  - redirects to / if user logged in
-  - renders the signup form (with flash msg)
+  - redirecciona a la vista de login o sign up, según se encuentre o no registrado el usuario.
 - POST /auth/signup
-  - redirects to / if user logged in
-  - body:
+  - redirecciona a la vista del formulario para poder darse de alta completando la siguiente información
     - username
-    - email
     - password
 - GET /auth/login
-  - redirects to / if user logged in
-  - renders the login form (with flash msg)
+  - redirecciona a la vista de login.
+  - renderiza la vista de login con el formulario de acceso.
 - POST /auth/login
-  - redirects to / if user logged in
-  - body:
+  - redirecciona a la vista de login, mostrando los campos a rellenar:
     - username
     - password
 - POST /auth/logout
-  - body: (empty)
-
+	- redirige a una vista de despedida 
 - GET /events
-  - renders the event list + the create form
-- POST /events/create 
-  - redirects to / if user is anonymous
-  - body: 
-    - name
-    - date
-    - location
-    - description
+  - renderiza la vista donde se mostrarán los contenidos publicados por los ususairos
+- POST /events/create
+  - redirecciona a la vista de creación de contenido mostrando el formulario para la creación del mismso
+  - formulario: 
+    - Titulo
+    - Autor
+    - Radio button para eleccion del tipo de contenido
+    - Contenido a publicar
 - GET /events/:id
-  - renders the event detail page
-  - includes the list of attendees
-  - attend button if user not attending yet
+  - renderiza la vista de busqueda de contenido en base a criterios de selección.
 - POST /events/:id/attend 
-  - redirects to / if user is anonymous
-  - body: (empty - the user is already stored in the session)
-
+  - redirecciona hacia el la vista con el campo de búsqueda de contenido.
+- GET /profile/
+  - renderiza la vista de perfil del usuario
+- POST	
 
 ## Models
 
