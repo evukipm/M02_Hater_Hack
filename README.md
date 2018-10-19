@@ -15,17 +15,24 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 - **post edit and delete** - Como hater puedo equivocarme a la hora de crear mi contenido y quiero poder editar o borrar mis lloriqueos.
 - **post find** - Como hater deseo poder filtrar el contenido generado por los demás haters, por lo que dispondré de una barra de búsqueda que me muestre el contenido en base a los criterios de búsqueda que yo defina.
 - **profile view** - Como hater deseo poder disponer de una vista de perfil donde poder visualizar y editar toda la información referente a mí, por lo que dispondré en el menú desplegable un enlace a la vista de mi perfil, con un botón de editar.
-- **haterism** - Como hater lo que realmente quiero es hatear, para lo que tendré unos botones de opinión debajo de las entradas completamente anónimos, con los que podré expresar mi odio libremente.
+
+##Haterism
+
+- **haterism buttons** - Como hater lo que realmente quiero es hatear, para lo que tendré unos botones de opinión debajo de las entradas completamente anónimos, con los que podré expresar mi odio libremente.
+
+- **Haterism resume** - Como hater quiero saber a cuánta gente hateo y cuánta gente me hatea a mí. También el total de hate que he repartido y me han lanzado.
+
+- **Hater level** - Como hater quiero saber cual es mi nivel de hater y, por supuesto, llegar al 100%.
 
 ## Backlog
 
  Lista de tareas reservadas al  Backlog
 
-- Iconos de odio: Incluirlos, contabilizarlos y relacionarlos con el creador del odio y el de la entrada.
-- Odiometro: Contabilizar el total de odio entregado y el total de odio recibido.
-- Odiometro detallado: contabilizar el odio recibido y entregado por icono
-- Odio general: Ranking de usuarios con más odio entregado y recibido y iconos de odio más usados.
-- Test de nivel de hater: cuestionario para la autoevalución del odio contenido.
+- **Iconos de odio:** Incluirlos, contabilizarlos y relacionarlos con el creador del odio y el de la entrada.
+- **Odiometro:** Contabilizar el total de odio entregado y el total de odio recibido.
+- **Odiometro detallado:** contabilizar el odio recibido y entregado por icono
+- **Odio general:** Ranking de usuarios con más odio entregado y recibido y iconos de odio más usados.
+- **Test de nivel de hater:** cuestionario para la autoevalución del odio contenido.
 
 
 ## ROUTES:
@@ -86,9 +93,10 @@ Posts model
 
 ```
 author: ObjectId<User>
-name: String
+title: String
 text: String
 date: Date
+hateButtons: Array
 ``` 
 
 ## Links
