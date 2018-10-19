@@ -116,7 +116,6 @@ password: String
 description: String
 campus: String
 cohort: String
-listOfContents: [ObjectId<posts>]
 hateRecived: Array
 ```
 
@@ -129,16 +128,20 @@ text: String
 date: Date
 hateButtons: [
  {
-  buttonName: String,
-  
+  buttonA: String,
+  counter: Number
  },
  {
-  buttonName: String,
-  
+  buttonB: String,
+  counter: Number  
  },
  {
-  buttonName: String,
-  
+  buttonC: String,
+  counter: Number
+ },
+ {
+  buttonD: String,
+  counter: Number
  }]
 ``` 
 
