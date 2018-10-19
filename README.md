@@ -49,45 +49,45 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
   - tiene filtro de búsqueda
   - si no está logeado, redirect a login
 - GET /auth/signup
-    - renderiza formulario de registro
-    - el submit redirecciona a auth/signup
+  - renderiza formulario de registro
+  - el submit redirecciona a auth/signup
 - POST /auth/signup
-    form (body):
+  - form (body):
     - username
     - password
-    - Creamos usuario y redireccionamos a /
-    - Creamos sesión de usuario
+  - Creamos usuario y redireccionamos a /
+  - Creamos sesión de usuario
 - GET /auth/login
   - renderiza la vista de login con el formulario de acceso.
   - el submit redirecciona a auth/login.
 - POST /auth/login
-    form (body):
-    - username
-    - password
-    - verificamos usuario.
-    - si no tiene cuenta redirigimos a auth/signup
-    - si tiene cuenta redirecciona a /
-    - Creamos sesion de usaurio
+  -form (body):
+   - username
+   - password
+  - verificamos usuario.
+  - si no tiene cuenta redirigimos a auth/signup
+  - si tiene cuenta redirecciona a /
+  - Creamos sesion de usaurio
 - POST /auth/logout
-	- redirige a una vista de despedida
-    - eliminamos sesion. 
+  - redirige a una vista de despedida
+  - eliminamos sesion. 
 - GET /posts/create
-	- renderiza la vista de creación de contenido.
+  - renderiza la vista de creación de contenido.
 - POST /posts/create
-    form (body)
-        - Titulo
-        - Autor
-        - Radio button para eleccion del tipo de contenido
-        - Contenido a publicar.
-    - Crear post
-	- redirecciona a la vista del /
+  - form (body)
+    - Titulo
+    - Autor
+    - Radio button para eleccion del tipo de contenido
+    - Contenido a publicar.
+  - Crear post
+  - redirecciona a la vista del /
 - GET /profile/
   - renderiza la vista de perfil del usuario
 - GET /profile/edit
-	- renderiza la vista de edición de perfil
+  - renderiza la vista de edición de perfil
 - POST /profile/edit
-    form (body)
-	- redirecciona a la vista del formulario de edición de contendido del perfil del usuario.
+  - form (body)
+    - redirecciona a la vista del formulario de edición de contendido del perfil del usuario.
 
 ## Models
 
