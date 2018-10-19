@@ -126,23 +126,13 @@ author: ObjectId<User>
 title: String
 text: String
 date: Date
-hateButtons: [
+hateButtons:
  {
-  buttonA: String,
-  counter: Number
- },
- {
-  buttonB: String,
-  counter: Number  
- },
- {
-  buttonC: String,
-  counter: Number
- },
- {
-  buttonD: String,
-  counter: Number
- }]
+  buttonA: 0,
+  buttonB: 0,
+  buttonC: 0,
+  buttonD: 0
+ }
 ``` 
 
 ## Links
