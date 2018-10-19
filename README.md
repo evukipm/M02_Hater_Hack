@@ -19,22 +19,13 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 
 ## Backlog
 
-List of other features outside of the MVPs scope
+ Lista de tareas reservadas al  Backlog
 
-User profile:
-- see my profile
-- upload my profile picture
-- see other users profile
-- list of events created by the user
-- list events the user is attending
-
-Geo Location:
-- add geolocation to events when creating
-- show event in a map in event detail page
-- show all events in a map in the event list page
-
-Homepage
-- ...
+- Iconos de odio: Incluirlos, contabilizarlos y relacionarlos con el creador del odio y el de la entrada.
+- Odiometro: Contabilizar el total de odio entregado y el total de odio recibido.
+- Odiometro detallado: contabilizar el odio recibido y entregado por icono
+- Odio general: Ranking de usuarios con más odio entregado y recibido y iconos de odio más usados.
+- Test de nivel de hater: cuestionario para la autoevalución del odio contenido.
 
 
 ## ROUTES:
