@@ -2,28 +2,20 @@
 
 ## Description
 
-Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo"
+Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
+
 ## User Stories
 
-- **404** - Como usuario hater deseo obtener una página de error 404 que me informe que la página solicitada no existe, lo que significa que estoy haciendo algo que "no hace sentido".
-- **500** - Como usuario hater deseo obtener una página de error 505 que me informe que la página solicitada no esta disponible, lo que significa que alguien está "hateandome".
-- **sign up** - Como usuario hater deseo poder registrarme en la aplicación, por lo que podré acceder a un fornulario que me solicte la información necesaria.
-- **login** - Como usuario hater deseo poder acceder a la aplicación a partir de una vista de login, por lo que veré una vista solicitandome un usuario y un una constraseña.
-- **events list** - Como usuario hater deseo poder visualizar todas las acciones disponibles, por lo que dispondre de una burqguer menu que me expanderá mostrandome dichas opciones.
-- **events create** - Como usuario hater deseo poder crear mi propio contenido para ser "hateado" por los demás, por lo que dispondré en el menú desplegable un link de acceso al editor de contenido.
-- **events find** - Como usuario hater deseo poder acceder y visulizar contenido generado por los demás usuarios, por lo que dispondré de una barra de búsqueda que me muestre el contenido en base a los criterios de úsqueda que yo degina.
-- **profile view** - Como usuario hater deseo poder disponer de una vista de perfil donde poder visualizar y editar toda la información referente a mi, por lo que dispondré en el menú desplegable un enlace a la vista de mi perfil, con un botón de editar.
-
-
-As a hater I want to see a extremly hater error page when the super team screws it up so that I know that is not my fault
-- **homepage** - As a hater I want to be able to access the homepage so that I see what the app is about and login and signup
-- **sign up** - As a hater I want to sign up on the webpage so that I can see all the events that I could attend
-- **login** - As a hater I want to be able to log in on the webpage so that I can get back to my account
-- **logout** - As a user I want to be able to log out from the webpage so that I can make sure no one will access my account
-- **events list** - As a hater I want to see all the events available so that I can choose which ones I want to attend
-- **events create** - As a hater I want to create an event so that I can invite others to attend
-- **events detail** - As a user I want to see the event details and attendee list of one event so that I can decide if I want to attend 
-- **event attend** - As a hater I want to be able to attend to event so that the organizers can count me in
+- **404** - Como hater deseo obtener una página de error 404 que me informe que la página solicitada no existe, lo que significa que estoy haciendo algo que "no hace sentido".
+- **500** - Como hater deseo obtener una página de error 505 que me informe que la página solicitada no esta disponible, lo que significa que alguien está "hateandome".
+- **sign up** - Como hater deseo repartir mi odio, por lo que podré acceder a un formulario de registro que me solicite la información necesaria para empezar.
+- **login** - Como hater deseo poder acceder a la aplicación a partir de una vista de login, por lo que veré una vista solicitandome un usuario y un una constraseña.
+- **post list** - Como hater deseo poder visualizar todas las acciones disponibles, por lo que dispondré de una burguer menu que me mostrará dichas opciones.
+- **post create** - Como hater deseo poder crear mi propio contenido para ser "hateado" por los demás, por lo que dispondré en el menú desplegable un link de acceso al creador de contenido.
+- **post edit and delete ** - Como hater puedo equivocarme a la hora de crear mi contenido y quiero poder editar o borrar mis lloriqueos.
+- **post find** - Como hater deseo poder filtrar el contenido generado por los demás haters, por lo que dispondré de una barra de búsqueda que me muestre el contenido en base a los criterios de búsqueda que yo defina.
+- **profile view** - Como hater deseo poder disponer de una vista de perfil donde poder visualizar y editar toda la información referente a mí, por lo que dispondré en el menú desplegable un enlace a la vista de mi perfil, con un botón de editar.
+- **haterism ** - Como hater lo que realmente quiero es hatear, para lo que tendré unos botones de opinión debajo de las entradas completamente anónimos, con los que podré expresar mi odio libremente.
 
 ## Backlog
 
