@@ -48,10 +48,12 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
     - username
     - password
 - POST /auth/logout
-	- redirige a una vista de despedida 
-- GET /events
-  - renderiza la vista donde se mostrarán los contenidos publicados por los ususairos
-- POST /events/create
+  - redirige a una vista de despedida 
+- GET /posts
+  - renderiza la vista donde se mostrarán los contenidos publicados por los ususairos.
+- GET /posts/create
+  - renderiza la vista de creación de contenido
+- POST /posts/create
   - redirecciona a la vista de creación de contenido mostrando el formulario para la creación del mismso
   - formulario: 
     - Titulo
@@ -64,7 +66,10 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
   - redirecciona hacia el la vista con el campo de búsqueda de contenido.
 - GET /profile/
   - renderiza la vista de perfil del usuario
-- POST	
+- GET /profile/edit
+  - renderiza la vista de edición de perfil
+- POST /profile/edit
+  - redirecciona a la vista del formulario de edición de contendido del perfil del usuario.
 
 ## Models
 
