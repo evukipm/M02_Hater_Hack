@@ -6,8 +6,8 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 
 ## User Stories
 
-- **404** - Como hater deseo obtener una página de error 4004 que me informe que la página solicitada no existe, lo que significa que estoy haciendo algo que "no hace sentido".
-- **500** - Como hater deseo obtener una página de error 505 que me informe que la página solicitada no esta disponible, lo que significa que alguien está "hateandome".
+- **4004** - Como hater deseo obtener una página de error 4004 que me informe que la página solicitada no existe, lo que significa que estoy haciendo algo que "no hace sentido".
+- **505** - Como hater deseo obtener una página de error 505 que me informe que la página solicitada no esta disponible, lo que significa que alguien está "hateandome".
 - **sign up** - Como hater deseo repartir mi odio, por lo que podré acceder a un formulario de registro que me solicite la información necesaria para empezar.
 - **login** - Como hater deseo poder acceder a la aplicación a partir de una vista de login, por lo que veré una vista solicitandome un usuario y un una constraseña.
 - **post list** - Como hater deseo poder visualizar todas las acciones disponibles, por lo que dispondré de una burguer menu que me mostrará dichas opciones.
