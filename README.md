@@ -40,10 +40,13 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 
 ## ROUTES:
 
+##Main
 - GET / 
   - renderiza la post list
   - tiene filtro de búsqueda
   - si no está logeado, redirect a login
+  
+##Auth
 - GET /auth/signup
   - renderiza formulario de registro
   - el submit redirecciona a auth/signup
@@ -67,6 +70,8 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 - POST /auth/logout
   - redirige a una vista de despedida
   - eliminamos sesion. 
+  
+##Posts  
 - GET /posts/create
   - renderiza la vista de creación de contenido.
 - POST /posts/create
@@ -76,7 +81,23 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
     - Radio button para eleccion del tipo de contenido
     - Contenido a publicar.
   - Crear post
+  - redirecciona a la vista del /  
+  
+- GET /posts/:id/edit
+  - renderiza la vista de edición de contenido.
+- POST /posts/:id/edit
+  - form (body)
+    - Título
+    - Radio button para eleccion del tipo de contenido
+    - Contenido a publicar.
+  - Publicar nuevamente post
   - redirecciona a la vista del /
+- POST /posts/:id/delete
+  - Elimina el contenido publicado
+  - Se solicita confirmación mediante 10 checks
+  - redirecciona a la vista del /
+  
+##Profile
 - GET /profile/
   - renderiza la vista de perfil del usuario
 - GET /profile/edit
