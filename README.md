@@ -30,8 +30,6 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 
 ## ROUTES:
 
-## ROUTES:
-
 - GET / 
   - renderiza la vista de la hommepage
 - GET /auth/signup
@@ -48,13 +46,13 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
     - username
     - password
 - POST /auth/logout
-  - redirige a una vista de despedida 
+	- redirige a una vista de despedida 
 - GET /posts
   - renderiza la vista donde se mostrarán los contenidos publicados por los ususairos.
 - GET /posts/create
-  - renderiza la vista de creación de contenido
+	- renderiza la vista de creación de contenido
 - POST /posts/create
-  - redirecciona a la vista de creación de contenido mostrando el formulario para la creación del mismso
+	- redirecciona a la vista de creación de contenido mostrando el formulario para la creación del mismso
   - formulario: 
     - Titulo
     - Autor
@@ -67,9 +65,9 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 - GET /profile/
   - renderiza la vista de perfil del usuario
 - GET /profile/edit
-  - renderiza la vista de edición de perfil
+	- renderiza la vista de edición de perfil
 - POST /profile/edit
-  - redirecciona a la vista del formulario de edición de contendido del perfil del usuario.
+	- redirecciona a la vista del formulario de edición de contendido del perfil del usuario.
 
 ## Models
 
@@ -78,30 +76,32 @@ User model
 ```
 username: String
 password: String
-```
-
-Event model
-
-```
-owner: ObjectId<User>
-name: String
 description: String
+campus: String
+cohort: String
+listOfContents: [ObjectId<posts>]
+```
+
+Posts model
+
+```
+author: ObjectId<User>
+name: String
+text: String
 date: Date
-location: String
-attendees: [ObjectId<User>]
 ``` 
 
 ## Links
 
 ### Trello
 
-[Link to your trello board](https://trello.com) or picture of your physical board
+[Link to your trello board](https://trello.com/b/pn3Ukwof/haterhack)
 
 ### Git
 
 The url to your repository and to your deployed project
 
-[Repository Link](http://github.com)
+[Repository Link](https://github.com/ibandasca/M02_Hater_Hack/blob/master/README.md)
 
 [Deploy Link](http://heroku.com)
 
