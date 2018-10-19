@@ -21,13 +21,9 @@ Blog para la comunidad Iron Hack donde profesar y fomentar el "haterismo".
 - **profile edit** - Como hater quiero poder completar mi perfil o modificarlo, por lo que necesito una página de edición de perfil.
 
 ##Haterism
-
 - **haterism buttons** - Como hater lo que realmente quiero es hatear, para lo que tendré unos botones de opinión debajo de las entradas completamente anónimos, con los que podré expresar mi odio libremente.
-
 - **Haterism resume** - Como hater quiero saber a cuánta gente profeso odio y cuánta gente me hatea a mí. También el total de hates que he repartido y me han lanzado.
-
 - **Hater level** - Como hater quiero saber cual es mi nivel de hater y, por supuesto, llegar al 100%.
-
 - **Profile with permissions** - Como hater me gustaría tener un perfil personalizado con información que solo yo pueda ver.
 
 ## Backlog p 
