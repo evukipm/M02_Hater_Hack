@@ -96,6 +96,7 @@ description: String
 campus: String
 cohort: String
 listOfContents: [ObjectId<posts>]
+hateRecived: Array
 ```
 
 Posts model
@@ -105,7 +106,19 @@ author: ObjectId<User>
 title: String
 text: String
 date: Date
-hateButtons: Array
+hateButtons: [
+ {
+  buttonName: String,
+  
+ },
+ {
+  buttonName: String,
+  
+ },
+ {
+  buttonName: String,
+  
+ }]
 ``` 
 
 ## Links
