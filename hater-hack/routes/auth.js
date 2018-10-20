@@ -43,4 +43,9 @@ router.post('/login', (req, res, next) => {
     .catch(next);
 });
 
+router.get('/logout', (req, res, next) => {
+  req.session.currentUser = null;
+  res.redirect('/auth/login');
+});
+
 module.exports = router;
