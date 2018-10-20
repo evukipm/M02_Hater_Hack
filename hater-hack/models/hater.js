@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const haterSchema = new Schema(
   {
-    username: String,
+    username: { type: String, unique: true },
     password: String,
     description: String,
     campus: String,
