@@ -34,11 +34,6 @@ app.use(session({
   }
 }));
 
-app.use((req, res, next) => {
-  app.locals.currentUser = req.session.currentUser;
-  next();
-});
-
 // view engine setup
 app.use(expressLayouts);
 app.set('views', path.join(__dirname, 'views'));
@@ -50,6 +45,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req, res, next) => {
+  app.locals.currentUser = req.session.currentUser;
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
