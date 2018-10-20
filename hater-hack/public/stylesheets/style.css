@@ -1,14 +1,69 @@
 /** ----  root  ---- **/
 :root{
   --azul-cor:#61C1F9;
+  --azul-osc:#00244E;
+  --blanco:#FCFCFC;
+}
 
+*{
+  margin:0;
+  padding:0;
 }
 
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(to right bottom, #048cc0, #2999ce, #3ea6dc, #50b3eb, #61c1f9);
+  background-attachment: fixed;
+  background-size: cover;
+  color:var(--blanco);
 }
 
 a {
   color: var(--azul-cor);
+}
+
+/* ---- login ---- */
+.title{
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size:4em;
+  margin:30px 35px 40px;
+  background:var(--azul-osc);
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  padding:40px 0;
+}
+.title span{
+  display:block;
+  font-weight: 100;
+}
+.login h2{
+  margin-bottom:10px;
+}
+.login{
+  width: 70%;
+  margin:0 auto;
+  text-align:center;
+}
+.login input, .login a, .login button{
+  display:block;
+  margin:5px auto 20px;
+  width:80%;
+  padding:10px;
+  font-size:1.5em;
+  border:none;
+  outline:none;
+}
+.login label{
+  margin:0;
+  color:var(--azul-osc);
+  font-size:1.5em;
+}
+.login button{
+  background:var(--azul-osc);
+  color:var(--blanco);
+}
+.login a{
+  color:var(--azul-osc);
+  text-decoration:none;
 }
