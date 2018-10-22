@@ -70,11 +70,19 @@ a {
 /** ---- main ---- */
 .main-container{
   display:flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+.post{
+  background:white;
+  margin:20px;
+  color:black;
+  padding:15px;
 }
 /** ---- navbar ---- */
 .navbar{
-  width:40%;
+  position:fixed;
+  left:0;
+  width:30%;
   height:100vh;
   background:black;
   text-align:center;

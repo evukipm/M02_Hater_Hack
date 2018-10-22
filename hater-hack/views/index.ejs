@@ -1,11 +1,13 @@
 <div class="main-container">
   <%- include partials/navbar %>
-  <% post.forEach(post => { %>
-  <div class="post">
-    <div><%= post.title %></div>
-    <div><%= post.text %></div>
-    <div><%= post.author %></div>
-    <div><%= post.date %></div>
-    </div>
-  <% }) %>
+  <div class="post-container">
+    <% post.forEach(post => { %>
+    <div class="post">
+      <div><%= post.title %></div>
+      <div><%= post.text %></div>
+      <div><%= post.author %></div>
+      <div><%= post.date %></div>
+      </div>
+    <% }) %>
+  </div>
 </div>
