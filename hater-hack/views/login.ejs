@@ -9,9 +9,7 @@
     <% } %></p>
     <label for="password">Contraseña:</label>
     <input type="password" name="password">
-    <p><% if (locals.message){ %>
-      <%= locals.message %>
-    <% } %></p>
+    <%- include partials/errors.ejs %>
     <button type="submit">Entrar</button>
   </form>
   <a href="/auth/register">¿No tienes cuenta?</a>
