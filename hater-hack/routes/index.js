@@ -8,7 +8,11 @@ const middlewares = require('../middleware/middlewares');
 router.get('/', middlewares.userExist, (req, res, next) => {
   // get all posts
   Post.find()
+    .populate('author')
     .then(post => {
+      // const authorOfPost = Hater.findById(post.author)
+      // console.log(authorOfPost);
+
       res.render('index', { post });
     })
     .catch(error => {

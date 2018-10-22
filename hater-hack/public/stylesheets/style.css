@@ -80,7 +80,7 @@ a {
 }
 /** ---- navbar ---- */
 .navbar{
-  position:fixed;
+  /* position:fixed; */
   left:0;
   width:30%;
   height:100vh;
