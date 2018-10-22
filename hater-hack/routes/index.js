@@ -8,6 +8,7 @@ router.get('/', middlewares.userExist, (req, res, next) => {
   // get all posts
   Post.find()
     .then(post => {
+      console.log(post);
       res.render('index', { post });
     })
     .catch(error => {

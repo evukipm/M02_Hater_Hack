@@ -9,7 +9,7 @@ const cryPostSchema = new Schema({
   },
   title: String,
   text: String,
-  date: Date,
+  date: String,
   hateButtons:
   {
     buttonA: Number,

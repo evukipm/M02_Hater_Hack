@@ -11,8 +11,10 @@ router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
   const userId = req.session.currentUser._id;
   const post = req.body;
   post.author = userId;
+  const f = new Date();
+  post.date = `el ${f.getDate()}/${f.getMonth()}/${f.getFullYear()} a las ${f.getHours()}:${f.getMinutes()}`;
+
   const crypost = new Post(post);
-  console.log(crypost);
   crypost.save()
     .then(() => {
       res.redirect('/');

@@ -67,7 +67,11 @@ a {
   color:var(--azul-osc);
   text-decoration:none;
 }
-
+/** ---- main ---- */
+.main-container{
+  display:flex;
+  justify-content: space-between;
+}
 /** ---- navbar ---- */
 .navbar{
   width:40%;
