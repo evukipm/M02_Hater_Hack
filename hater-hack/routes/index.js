@@ -8,7 +8,7 @@ router.get('/', middlefriends.userExist, (req, res, next) => {
   // get all posts
   Post.find()
     .then(post => {
-      res.render('/', { post }); // send all post to the view
+      res.render('index', { post });
     })
     .catch(error => {
       next(error);

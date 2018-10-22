@@ -29,6 +29,7 @@ function infoPostIsEmpty (req, res, next) {
     req.flash('error', 'Gañan@, los campos están vacios');
     res.redirect('/post/new');
   }
+  next();
 }
 
 module.exports = {

@@ -21,4 +21,4 @@ const cryPostSchema = new Schema({
 
 const Post = mongoose.model('Post', cryPostSchema);
 
-module.exports = Post
+module.exports = Post;
