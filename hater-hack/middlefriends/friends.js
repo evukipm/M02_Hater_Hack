@@ -22,8 +22,18 @@ function userExist (req, res, next) {
   next();
 }
 
+function infoPostIsEmpty (req, res, next) {
+  const title = req.body.title;
+  const text = req.body.text;
+  if (!title || !text) {
+    req.flash('error', 'Gañan@, los campos están vacios');
+    res.redirect('/post/new');
+  }
+}
+
 module.exports = {
   storeCurrentUser,
   isEmpty,
-  userExist
+  userExist,
+  infoPostIsEmpty
 };
