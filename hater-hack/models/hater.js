@@ -5,7 +5,7 @@ const haterSchema = new Schema(
   {
     username: { type: String, unique: true },
     password: String,
-    avatar: { type: String, default: 'images/avatar.png' },
+    avatar: { type: String, default: '/images/avatar.png' },
     description: String,
     campus: String,
     cohort: String,
