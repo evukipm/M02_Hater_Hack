@@ -4,13 +4,7 @@ const Post = require('../models/crypost');
 const router = express.Router();
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
-  if (res.locals.currentUser) {
-    res.render('index');
-  } else {
-    res.redirect('/auth/login');
-  }
-
+router.get('/', middlefriends.userExist, (req, res, next) => {
   // get all posts
   Post.find()
     .then(post => {
