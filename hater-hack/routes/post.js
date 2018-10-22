@@ -8,18 +8,16 @@ router.get('/new', middlewares.userExist, (req, res, next) => {
 });
 
 router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
+  const userId = req.session.currentUser._id;
   const post = req.body;
+  post.author = userId;
   const crypost = new Post(post);
-  console.log('hola');
+  console.log(crypost);
   crypost.save()
     .then(() => {
       res.redirect('/');
     })
-  // Post.create({ post })
-  //   .then(() => {
-  //     console.log('hola?');
-  //     res.redirect('/');
-  //   })
+
     .catch((error) => {
       next(error);
     });
