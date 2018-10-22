@@ -10,14 +10,14 @@ function isEmpty (req, res, next) {
   const name = req.body.name;
   const pass = req.body.password;
   if (!name || !pass) {
-    res.redirect('/');
+    return res.redirect('/');
   }
   next();
 }
 
 function userExist (req, res, next) {
   if (!res.locals.currentUser) {
-    res.redirect('/');
+    return res.redirect('/');
   }
   next();
 }

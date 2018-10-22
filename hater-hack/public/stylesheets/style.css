@@ -22,7 +22,7 @@ a {
   color: var(--azul-cor);
 }
 
-/* ---- login ---- */
+/* ---- login and register ---- */
 .title{
   font-family: 'Roboto';
   font-weight: 900;
@@ -66,4 +66,15 @@ a {
 .login a{
   color:var(--azul-osc);
   text-decoration:none;
+}
+
+/** ---- navbar ---- */
+.navbar{
+  width:40%;
+  height:100vh;
+  background:black;
+  text-align:center;
+}
+.navbar img{
+  width:50%;
 }

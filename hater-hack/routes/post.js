@@ -4,7 +4,7 @@ const Post = require('../models/crypost');
 const router = express.Router();
 
 router.get('/new', (req, res, next) => {
-  res.render('posts/newpost');
+  res.render('newpost');
 });
 
 router.post('/new', (req, res, next) => {
