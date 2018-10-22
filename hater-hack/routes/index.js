@@ -1,5 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const mongoose = require('mongoose');
+const Post = require('../models/crypost');
+const router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -8,6 +10,15 @@ router.get('/', (req, res, next) => {
   } else {
     res.redirect('/auth/login');
   }
+
+  // get all posts
+  Post.find()
+    .then(post => {
+      res.render('/', { post }); // send all post to the view
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 module.exports = router;
