@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const Post = require('../models/crypost');
 const router = express.Router();
 const middlefriends = require('../middlefriends/friends');
