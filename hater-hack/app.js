@@ -12,7 +12,7 @@ const MongoStore = require('connect-mongo')(session);
 const indexRouter = require('./routes/index');
 const postRouter = require('./routes/post');
 const authRouter = require('./routes/auth');
-const middlefriends = require('./middlefriends/friends');
+const middlewares = require('./middleware/middlewares');
 
 const app = express();
 
@@ -55,7 +55,7 @@ app.use(cookieParser());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(middlefriends.storeCurrentUser);
+app.use(middlewares.storeCurrentUser);
 
 app.use((req, res, next) => {
   res.locals.errorMessages = req.flash('error');

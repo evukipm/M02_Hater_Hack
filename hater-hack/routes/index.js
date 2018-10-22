@@ -1,10 +1,10 @@
 const express = require('express');
 const Post = require('../models/crypost');
 const router = express.Router();
-const middlefriends = require('../middlefriends/friends');
+const middlewares = require('../middleware/middlewares');
 
 /* GET home page. */
-router.get('/', middlefriends.userExist, (req, res, next) => {
+router.get('/', middlewares.userExist, (req, res, next) => {
   // get all posts
   Post.find()
     .then(post => {

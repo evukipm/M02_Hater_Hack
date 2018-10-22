@@ -3,13 +3,13 @@ const router = express.Router();
 const Hater = require('../models/hater');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const middlefriends = require('../middlefriends/friends');
+const middlewares = require('../middleware/middlewares');
 
 router.get('/register', (req, res, next) => {
   res.render('register');
 });
 
-router.post('/register', middlefriends.isEmpty, (req, res, next) => {
+router.post('/register', middlewares.isEmpty, (req, res, next) => {
   const name = req.body.name;
   const pass = req.body.password;
 
@@ -28,7 +28,7 @@ router.get('/login', (req, res, next) => {
   res.render('login', { messages: req.flash('error') });
 });
 
-router.post('/login', middlefriends.isEmpty, (req, res, next) => {
+router.post('/login', middlewares.isEmpty, (req, res, next) => {
   const hater = req.body;
   const name = hater.name;
 
@@ -50,7 +50,7 @@ router.post('/login', middlefriends.isEmpty, (req, res, next) => {
     .catch(next);
 });
 
-router.get('/logout', middlefriends.userExist, (req, res, next) => {
+router.get('/logout', middlewares.userExist, (req, res, next) => {
   req.session.destroy((err) => {
     if (err) {
     } else {

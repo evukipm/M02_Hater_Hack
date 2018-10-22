@@ -1,13 +1,13 @@
 const express = require('express');
 const Post = require('../models/crypost');
 const router = express.Router();
-const middlefriends = require('../middlefriends/friends');
+const middlewares = require('../middleware/middlewares');
 
-router.get('/new', middlefriends.userExist, (req, res, next) => {
+router.get('/new', middlewares.userExist, (req, res, next) => {
   res.render('posts/newpost', { messages: req.flash('error') });
 });
 
-router.post('/new', middlefriends.infoPostIsEmpty, (req, res, next) => {
+router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
   const post = req.body;
   const crypost = new Post(post);
   console.log('hola');
