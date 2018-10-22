@@ -17,7 +17,7 @@ function isEmpty (req, res, next) {
 
 function userExist (req, res, next) {
   if (!res.locals.currentUser) {
-    return res.redirect('/');
+    return res.redirect('/auth/login');
   }
   next();
 }
