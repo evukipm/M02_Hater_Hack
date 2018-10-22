@@ -33,11 +33,17 @@ router.post('/login', (req, res, next) => {
 
   Hater.findOne({ username: name })
     .then(user => {
-      if (bcrypt.compareSync(hater.password, user.password)) {
-        req.session.currentUser = user;
-        res.redirect('/');
+      if (user) {
+        if (bcrypt.compareSync(hater.password, user.password)) {
+          req.session.currentUser = user;
+          return res.redirect('/');
+        } else {
+          req.flash('error', 'WTF? El nombre o la contraseña no existen');
+          return res.redirect('/auth/login');
+        }
       } else {
-        res.redirect('/auth/login');
+        req.flash('error', 'WTF? El nombre o la contraseña no existen');
+        return res.redirect('/auth/login');
       }
     })
     .catch(next);
@@ -45,7 +51,12 @@ router.post('/login', (req, res, next) => {
 
 router.get('/logout', (req, res, next) => {
   req.session.currentUser = null;
-  res.redirect('/auth/login');
+  req.session.destroy((err) => {
+    if (err) {
+    } else {
+      res.redirect('/auth/login');
+    }
+  });
 });
 
 module.exports = router;

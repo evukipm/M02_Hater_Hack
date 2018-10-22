@@ -1,6 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const expressLayouts = require('express-ejs-layouts');
@@ -44,10 +45,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
   app.locals.currentUser = req.session.currentUser;
+  next();
+});
+
+app.use((req, res, next) => {
+  res.locals.message = req.flash('error');
   next();
 });
 

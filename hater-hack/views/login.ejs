@@ -4,8 +4,14 @@
   <form action="/auth/login" method="post">
     <label for="name">Nombre:</label>
     <input type="text" name="name">
+    <p><% if (locals.message){ %>
+      <%= locals.message %>
+    <% } %></p>
     <label for="password">Contraseña:</label>
     <input type="password" name="password">
+    <p><% if (locals.message){ %>
+      <%= locals.message %>
+    <% } %></p>
     <button type="submit">Entrar</button>
   </form>
   <a href="/auth/register">¿No tienes cuenta?</a>
