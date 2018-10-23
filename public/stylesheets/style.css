@@ -81,8 +81,6 @@ a {
   color:black;
   padding:15px;
   border-radius: 15px;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 .post .main-title {
@@ -93,6 +91,7 @@ a {
 .post .info-container {
   display: inline-block;
   margin-bottom: 20px;
+  margin-top: 5px;
 }
 
 .info-container p {
