@@ -1,3 +1,4 @@
+<script src="/javascripts/likes.js"></script>
 <div class="main-container">
   <%- include partials/navbar %>
   <div class="post-container">
@@ -7,7 +8,18 @@
       <div><a href="/profile/<%= post.author._id%>"><%= post.author.username%></a></div>
       <div><%= post.date %></div>
       <div><%= post.text %></div>
-      <div><%= post.hateButtons %></div>
+      <div>
+        <form action="/<%= post._id %>" method="post">
+          <label for="a"><%= post.hateButtons.buttonA %></label>
+          <button name="button" value="a" type="submit">A</button>
+          <label for="b"><%= post.hateButtons.buttonB %></label>
+          <button name="button" value="b" type="submit">B</button>
+          <label for="c"><%= post.hateButtons.buttonC %></label>
+          <button name="button" value="c" type="submit">C</button>
+          <label for="d"><%= post.hateButtons.buttonD %></label>
+          <button name="button" value="d" type="submit">D</button>
+        </form>
+      </div>
       </div>
     <% }) %>
   </div>

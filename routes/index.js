@@ -20,4 +20,18 @@ router.get('/', middlewares.userExist, (req, res, next) => {
     });
 });
 
+router.post('/:id', (req, res, next) => {
+  const id = req.params.id;
+  const body = req.body;
+  console.log(req.body);
+
+  Post.findById({ _id: id })
+    .then(post => {
+      if (body.button === 'a') {
+        console.log(hola);
+      }
+    })
+    .catch(next);
+});
+
 module.exports = router;
