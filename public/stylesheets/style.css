@@ -73,13 +73,56 @@ a {
 }
 .post-container{
   width:100vw;
+  transition:1.5s;
 }
 .post{
   font-size:16px;
-  background:white;
+  background:var(--blanco);
   margin:20px 20px 20px 70px;
   color:black;
   padding:15px;
+  border-radius:4px;
+  box-shadow:2px 2px 4px var(--azul-osc);
+}
+.move{
+  margin-left:100px;
+  transition:1.5s;
+}
+
+.post-title{
+  border-bottom:2px solid var(--azul-cor);
+}
+.post-title a{
+  font-size:20px;
+  text-decoration:none;
+  color:var(--azul-cor);
+}
+
+.post-info{
+  display:flex;
+}
+
+.post-text{
+  padding:20px;
+  text-align:justify;
+  background:rgb(238, 238, 238);
+  margin:10px 0;
+}
+
+.post-buttons{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-buttons button{
+  border:none;
+  background:none;
+  height:25px;
+}
+.post-buttons label{
+  height:15px;
+  padding:5px;
 }
 /** ---- navbar ---- */
 .burger{
@@ -94,6 +137,7 @@ a {
   border-radius:50%;
 }
 .navbar{
+  position:fixed;
   left:0;
   width:0;
   height:100vh;
@@ -103,12 +147,21 @@ a {
   transition:1.5s;
 }
 .open{
-  width:100px;
+  width:150px;
   transition:1.5s;
-  position:fixed;
 }
 .navbar img{
   width:50%;
+}
+.navbar a{
+  display:block;
+  margin:10px;
+  padding:10px;
+  text-align:center;
+  background:var(--azul-cor);
+  color:black;
+  text-decoration:none;
+  border-radius:4px;
 }
 
 /** ---- Profile ---- **/

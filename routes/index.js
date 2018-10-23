@@ -1,6 +1,5 @@
 const express = require('express');
 const Post = require('../models/crypost');
-const Hater = require('../models/hater');
 const router = express.Router();
 const middlewares = require('../middleware/middlewares');
 
@@ -10,14 +9,9 @@ router.get('/', middlewares.userExist, (req, res, next) => {
   Post.find()
     .populate('author')
     .then(post => {
-      // const authorOfPost = Hater.findById(post.author)
-      // console.log(authorOfPost);
-
       res.render('index', { post });
     })
-    .catch(error => {
-      next(error);
-    });
+    .catch(next);
 });
 
 router.post('/:id', (req, res, next) => {
@@ -36,7 +30,7 @@ router.post('/:id', (req, res, next) => {
         post.hateButtons.buttonC++;
         post.save();
       } else if (body.button === 'd') {
-        post.hateButtons.buttonC++;
+        post.hateButtons.buttonD++;
         post.save();
       }
       res.redirect('/');

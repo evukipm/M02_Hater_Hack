@@ -1,8 +1,11 @@
 <div class="burger"></div>
 <div class="navbar">
-  <img src="<%= currentUser.avatar %>">
-  <h2><%= currentUser.username %></h2>
-  <a href="/auth/logout">Logout</a>
-  <a href="/post/new">Nueva entrada</a>
-  <a href="/profile/<%= currentUser._id %>">Tu perfil</a>
+  <div class="nav-close">X</div>
+  <div class="nav-container">
+    <img src="<%= currentUser.avatar %>">
+    <h2><%= currentUser.username %></h2>
+    <a href="/auth/logout">Logout</a>
+    <a href="/post/new">Nueva entrada</a>
+    <a href="/profile/<%= currentUser._id %>">Tu perfil</a>
+  </div>
 </div>
