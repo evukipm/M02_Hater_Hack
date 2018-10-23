@@ -33,6 +33,28 @@ router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
     });
 });
 
-// edit posts
+// get posts
+router.get('/:id', middlewares.userExist, (req, res, next) => {
+  const id = req.params.id;
+  Post.findById(id)
+    .then(post => {
+      res.render('../views/posts/postdetails.ejs', { post });
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
+// delete
+router.get('/:id/delete', middlewares.userExist, (req, res, next) => {
+  const id = req.params.id;
+  Post.findOneAndRemove({ _id: id })
+    .then(result => {
+      res.redirect('/');
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
 
 module.exports = router;
