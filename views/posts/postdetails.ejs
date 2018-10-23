@@ -1,0 +1,11 @@
+<div class="post-container">
+
+
+      <div><%= post.title %></a></div>
+      <div><%= post.author.username%></a></div>
+
+      <div><%= post.date %></div>
+      <div><%= post.text %></div>
+      <div><a href="/post/<%= post._id %>/edit">Edit</a></div>
+      <div><a href="/post/<%= post._id %>/delete">Delete</a></div>
+  </div>
