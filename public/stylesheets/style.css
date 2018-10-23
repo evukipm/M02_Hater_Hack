@@ -70,22 +70,42 @@ a {
 /** ---- main ---- */
 .main-container{
   display:flex;
-  justify-content: flex-end;
+}
+.post-container{
+  width:100vw;
 }
 .post{
+  font-size:16px;
   background:white;
-  margin:20px;
+  margin:20px 20px 20px 70px;
   color:black;
   padding:15px;
 }
 /** ---- navbar ---- */
+.burger{
+  width:50px;
+  height:50px;
+  position:fixed;
+  top:10px;
+  left:10px;
+  background-image:url('/images/menu.png');
+  background-size:50px 50px;
+  background-color:#fff;
+  border-radius:50%;
+}
 .navbar{
-   */
   left:0;
-  width:30%;
+  width:0;
   height:100vh;
   background:black;
   text-align:center;
+  overflow:hidden;
+  transition:1.5s;
+}
+.open{
+  width:100px;
+  transition:1.5s;
+  position:fixed;
 }
 .navbar img{
   width:50%;

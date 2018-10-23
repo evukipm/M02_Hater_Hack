@@ -1,4 +1,3 @@
-<script src="/javascripts/likes.js"></script>
 <div class="main-container">
   <%- include partials/navbar %>
   <div class="post-container">
@@ -11,13 +10,13 @@
       <div>
         <form action="/<%= post._id %>" method="post">
           <label for="a"><%= post.hateButtons.buttonA %></label>
-          <button name="button" value="a" type="submit">A</button>
+          <button name="button" value="a" type="submit"><img src="/images/pizza.png" alt=""></button>
           <label for="b"><%= post.hateButtons.buttonB %></label>
-          <button name="button" value="b" type="submit">B</button>
+          <button name="button" value="b" type="submit"><img src="/images/balloon.png" alt=""></button>
           <label for="c"><%= post.hateButtons.buttonC %></label>
-          <button name="button" value="c" type="submit">C</button>
+          <button name="button" value="c" type="submit"><img src="/images/baby-cry.png" alt=""></button>
           <label for="d"><%= post.hateButtons.buttonD %></label>
-          <button name="button" value="d" type="submit">D</button>
+          <button name="button" value="d" type="submit"><img src="/images/blackboard.png" alt=""></button>
         </form>
       </div>
       </div>
