@@ -3,22 +3,26 @@
   <div class="post-container">
     <% post.forEach(post => { %>
     <div class="post">
-      <div><a href="/post/<%= post._id %>"><%= post.title %></a></div>
-      <div><a href="/profile/<%= post.author._id%>"><%= post.author.username%></a></div>
-      <div><%= post.date %></div>
-      <div><%= post.text %></div>
-      <div>
-        <form action="/<%= post._id %>" method="post">
-          <label for="a"><%= post.hateButtons.buttonA %></label>
-          <button name="button" value="a" type="submit"><img src="/images/pizza.png" alt=""></button>
-          <label for="b"><%= post.hateButtons.buttonB %></label>
-          <button name="button" value="b" type="submit"><img src="/images/balloon.png" alt=""></button>
-          <label for="c"><%= post.hateButtons.buttonC %></label>
-          <button name="button" value="c" type="submit"><img src="/images/baby-cry.png" alt=""></button>
-          <label for="d"><%= post.hateButtons.buttonD %></label>
-          <button name="button" value="d" type="submit"><img src="/images/blackboard.png" alt=""></button>
-        </form>
-      </div>
+    <div><a class="main-title" href="/post/<%= post._id %>"><%= post.title %></a></div>
+    <div class="info-container">
+      <p class="main-author"> By:</p>
+      <a class="author-link" href="/profile/<%= post.author._id%>"><%= post.author.username%></a>
+      <p class="date"><%= post.date %></p>
+      <hr>
+    </div>
+    <div class="main-text"><%= post.text %></div>
+    <div>
+      <form action="/<%= post._id %>" method="post">
+        <label for="a"><%= post.hateButtons.buttonA %></label>
+        <button name="button" value="a" type="submit"><img src="/images/pizza.png" alt=""></button>
+        <label for="b"><%= post.hateButtons.buttonB %></label>
+        <button name="button" value="b" type="submit"><img src="/images/balloon.png" alt=""></button>
+        <label for="c"><%= post.hateButtons.buttonC %></label>
+        <button name="button" value="c" type="submit"><img src="/images/baby-cry.png" alt=""></button>
+        <label for="d"><%= post.hateButtons.buttonD %></label>
+        <button name="button" value="d" type="submit"><img src="/images/blackboard.png" alt=""></button>
+      </form>
+    </div>
       </div>
     <% }) %>
   </div>
