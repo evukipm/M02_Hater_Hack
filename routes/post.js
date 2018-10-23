@@ -36,9 +36,19 @@ router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
 // get posts
 router.get('/:id', middlewares.userExist, (req, res, next) => {
   const id = req.params.id;
+  // current usser
+  const userId = req.session.currentUser._id;
   Post.findById(id)
+    .populate('author')
     .then(post => {
-      res.render('../views/posts/postdetails.ejs', { post });
+      // new object with current user & post oject
+      console.log(post.author._id);
+      console.log(userId);
+      const post1 = {
+        post,
+        userId
+      };
+      res.render('../views/posts/postdetails', { post1 });
     })
     .catch(error => {
       next(error);

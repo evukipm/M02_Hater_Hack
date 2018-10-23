@@ -32,6 +32,12 @@ function infoPostIsEmpty (req, res, next) {
   next();
 }
 
+// function eraseIfIsUSer (req, res, next) {
+//   if (!res.locals.user) {
+
+//   }
+// }
+
 module.exports = {
   storeCurrentUser,
   isEmpty,
