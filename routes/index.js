@@ -23,13 +23,23 @@ router.get('/', middlewares.userExist, (req, res, next) => {
 router.post('/:id', (req, res, next) => {
   const id = req.params.id;
   const body = req.body;
-  console.log(req.body);
 
   Post.findById({ _id: id })
     .then(post => {
       if (body.button === 'a') {
-        console.log(hola);
+        post.hateButtons.buttonA++;
+        post.save();
+      } else if (body.button === 'b') {
+        post.hateButtons.buttonB++;
+        post.save();
+      } else if (body.button === 'c') {
+        post.hateButtons.buttonC++;
+        post.save();
+      } else if (body.button === 'd') {
+        post.hateButtons.buttonC++;
+        post.save();
       }
+      res.redirect('/');
     })
     .catch(next);
 });
