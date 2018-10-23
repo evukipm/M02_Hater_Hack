@@ -8,6 +8,7 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const postRouter = require('./routes/post');
@@ -17,7 +18,7 @@ const middlewares = require('./middleware/middlewares');
 const app = express();
 
 // mongoose
-mongoose.connect('mongodb://localhost/hater-hackDB', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
