@@ -15,10 +15,12 @@ router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
   post.author = ObjectId(userId);
   const f = new Date();
   post.date = `el ${f.getDate()}/${f.getMonth()}/${f.getFullYear()} a las ${f.getHours()}:${f.getMinutes()}`;
-  post.hateButtons.buttonA = 0;
-  post.hateButtons.buttonB = 0;
-  post.hateButtons.buttonC = 0;
-  post.hateButtons.buttonD = 0;
+  post.hateButtons = {
+    buttonA: 0,
+    buttonB: 0,
+    buttonC: 0,
+    buttonD: 0
+  };
 
   const crypost = new Post(post);
   crypost.save()
@@ -30,5 +32,7 @@ router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
       next(error);
     });
 });
+
+// edit posts
 
 module.exports = router;
