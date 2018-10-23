@@ -1,0 +1,41 @@
+<div class="profile">
+  <img src="<%= user.avatar %>">
+  <h1 class="username"><%= user.username %></h1>
+  <div class="description">
+    <h2>Descripción</h2>
+    <% if(user.description){ %>
+      <p><%= user.description %></p>
+    <% } else { %>
+      <p>Este usuario aún no tiene descripción</p>
+    <% } %>
+  </div>
+  <div class="cohort">
+    <h2>Cohort</h2>
+    <% if(user.cohort){ %>
+      <%= user.cohort %>
+    <% } else { %>
+      <p>Este usuario no ha especificado Cohort</p>
+    <% } %>
+  </div>
+  <div class="campus">
+    <h2>Campus</h2>
+    <% if(user.campus){ %>
+      <p><%= user.campus %></p>
+    <% } else { %>
+      <p>Este usuario no ha especificado Campus</p>
+    <% } %>
+  </div>
+  <div class="user-posts">
+    <h2>Lloriqueos</h2>
+    <% if(post) { %>
+      <% post.forEach(post => {%>
+      <a href="/post/<%= post._id %>"><%= post.title %></a>
+      <% }) %>
+    <% } else { %>
+      <p>El usuario no ha escrito ningún post</p>
+    <% } %>
+  </div>
+  <div class="haterecibed">
+
+  </div>
+</div>

@@ -90,3 +90,17 @@ a {
 .navbar img{
   width:50%;
 }
+
+/** ---- Profile ---- **/
+.profile{
+  text-align:center;
+  width:50%;
+  background:var(--blanco);
+  color:var(--azul-osc);
+  margin:50px auto;
+  padding:20px;
+  border-radius:4px;
+}
+.profile img{
+  width:30%;
+}
