@@ -2,19 +2,23 @@
   <div class="alert alert-info">
     <%- message %>
   </div>
-<% }) dangerMessages && dangerMessages.forEach((message) => { %>
+<% }) 
+dangerMessages && dangerMessages.forEach((message) => { %>
   <div class="alert alert-danger">
     <%- message %>
   </div>
-<% })  errorMessages && errorMessages.forEach((message) => { %>
+<% })  
+errorMessages && errorMessages.forEach((message) => { %>
   <div class="alert alert-danger">
     <%- message %>
   </div>
-<% })  successMessages && successMessages.forEach((message) => { %>
+<% })  
+successMessages && successMessages.forEach((message) => { %>
   <div class="alert alert-success">
     <%- message %>
   </div>
-<% })  warningMessages && warningMessages.forEach((message) => { %>
+<% })  
+warningMessages && warningMessages.forEach((message) => { %>
   <div class="alert alert-warning">
     <%- message %>
   </div>

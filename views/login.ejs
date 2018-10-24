@@ -1,7 +1,7 @@
 <div class="login">
   <h1 class="title">Hater<span>Hack</span></h1>
   <h2>Ah, ¿otra vez tú?</h2>
-  <form action="/auth/login" method="post">
+  <form action="/auth/login" method="post" enctype="multipart/form-data">
     <label for="name">Nombre:</label>
     <input type="text" name="name">
     <p><% if (locals.message){ %>
@@ -9,7 +9,7 @@
     <% } %></p>
     <label for="password">Contraseña:</label>
     <input type="password" name="password">
-    <%- include partials/errors.ejs %>
+    <%- include partials/errors %>
     <button type="submit">Entrar</button>
   </form>
   <a href="/auth/register">¿No tienes cuenta?</a>

@@ -5,7 +5,6 @@ const middlewares = require('../middleware/middlewares');
 
 /* GET home page. */
 router.get('/', middlewares.userExist, (req, res, next) => {
-  // get all posts
   Post.find()
     .populate('author')
     .then(post => {
