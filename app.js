@@ -1,4 +1,3 @@
-const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const flash = require('connect-flash');
@@ -74,19 +73,23 @@ app.use('/auth', authRouter);
 app.use('/profile', profileRouter);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
+app.use((req, res, next) => {
+  res.status(404);
+  res.render('errors/404');
 });
 
 // error handler
 app.use(function (err, req, res, next) {
+  console.log('error', err);
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
+  const status = err.status || 500;
+  res.status(status);
+  res.locals.status = status;
 
   // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+  res.render('errors/error');
 });
 
 module.exports = app;

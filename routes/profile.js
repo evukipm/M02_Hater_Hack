@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/hater');
 const Post = require('../models/crypost');
-const middlewares = require('../middleware/middlewares');
 const uploadCloud = require('../services/cloudinary.js');
 
 router.get('/:id', (req, res, next) => {

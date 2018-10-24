@@ -27,11 +27,13 @@ a {
   font-family: 'Roboto';
   font-weight: 900;
   font-size:4em;
-  margin:30px 35px 40px;
+  margin:30px auto 40px;
   background:var(--azul-osc);
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   padding:40px 0;
+  width:200px;
+  height:140px;
 }
 .title span{
   display:block;
