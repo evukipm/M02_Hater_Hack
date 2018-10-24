@@ -63,46 +63,69 @@ a {
   background:var(--azul-osc);
   color:var(--blanco);
 }
+
 .login a{
   color:var(--azul-osc);
   text-decoration:none;
 }
 /** ---- main ---- */
 .main-container{
-  display:flex;
+  margin-top: 100px;
 }
 .post-container{
   width:100vw;
   transition:1.5s;
+  display: flex;
+  flex-flow: column-reverse;
 }
 .post{
   font-size:16px;
   background:var(--blanco);
-  margin:20px 20px 20px 70px;
+  margin:20px;
   color:black;
   padding:15px;
   border-radius: 15px;
   box-shadow:2px 2px 4px var(--azul-osc);
 }
+
 .move{
   margin-left:100px;
   transition:1.5s;
 }
 
-.post-title{
-  border-bottom:2px solid var(--azul-cor);
+.post .info-container {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.post .main-author {
+  display: inline-block;
+  font-size: 13px;
+}
+
+.post .author-link {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.info-container .date {
+  font-size: 13px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: rgb(60, 80, 80)
+}
+
+.post-title a{
   font-size: 25px;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .post-text{
-  padding:20px;
-  text-align:justify;
-  background:rgb(238, 238, 238);
-  margin:10px 0;
+  margin-bottom: 30px;
 }
 
 .post-buttons{
+  margin-top: 30px;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -118,38 +141,9 @@ a {
   padding:5px;
 }
 
-.post .main-title {
-  font-size: 25px;
-  text-decoration: none
-}
-
-.post .info-container {
-  display: inline-block;
-  margin-bottom: 20px;
-  margin-top: 5px;
-}
-
 .info-container p {
   display: inline-block;
   font-size: 13px;
-}
-
-.post .main-author {
-  display: inline-block;
-  font-size: 13px;
-  margin-left: 5px;
-}
-
-.post .author-link {
-  font-size: 13px;
-  text-decoration: none;
-}
-
-.info-container .date {
-  font-size: 13px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  color: rgb(60, 80, 80)
 }
 
 .post .main-text {
@@ -158,22 +152,11 @@ a {
 }
 
 /** ---- navbar ---- */
-.burger{
-  width:50px;
-  height:50px;
-  position:fixed;
-  top:10px;
-  left:10px;
-  background-image:url('/images/menu.png');
-  background-size:50px 50px;
-  background-color:#fff;
-  border-radius:50%;
-}
 .navbar{
   position:fixed;
-  left:0;
-  width:0;
-  height:100vh;
+  display: flex;
+  top: 0px;
+  width:100vh;
   background:black;
   text-align:center;
   overflow:hidden;
@@ -184,11 +167,10 @@ a {
   transition:1.5s;
 }
 .navbar img{
-  width:50%;
+  width:50px;
 }
 .navbar a{
-  display:block;
-  margin:10px;
+  margin:5px;
   padding:10px;
   text-align:center;
   background:var(--azul-cor);
