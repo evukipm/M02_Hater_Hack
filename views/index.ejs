@@ -3,15 +3,14 @@
   <div class="post-container">
     <% post.forEach(post => { %>
     <div class="post">
-      <div><a class="main-title" href="/post/<%= post._id %>"><%= post.title %></a></div>
+      <div class="post-title"><a href="/post/<%= post._id %>"><%= post.title %></a></div>
       <div class="info-container">
-        <p class="main-author"> By:</p>
+        <p class="main-author">By: </p>
         <a class="author-link" href="/profile/<%= post.author._id%>"><%= post.author.username%></a>
         <p class="date"><%= post.date %></p>
-        <hr>
       </div>
-      <div class="main-text"><%= post.text %></div>
-      <div>
+      <div class="post-text"><%= post.text %></div>
+      <div class="post-buttons">
         <form action="/<%= post._id %>" method="post">
           <label for="a"><%= post.hateButtons.buttonA %></label>
           <button name="button" value="a" type="submit"><img src="/images/pizza.png" alt=""></button>
