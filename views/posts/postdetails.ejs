@@ -1,14 +1,15 @@
 <div class="post-container">
       <div><%= post1.post.title %></a></div>
-      <div><%= post1.post.author.username%></a></div>
+      <div><%= post1.post.author.username %></a></div>
       <div><%= post1.post.date %></div>
       <div><%= post1.post.text %></div>
 
-      <div><%= post1.userId  %></div>
+      <div><%= post1.userId %></div>
       <div><%= post1.post.author._id %></div>
 
       <% if(post1.userId == post1.post.author._id){ %>
-          <div><a href="/post/<%= post1.post.author._id %>/edit">Edit</a></div>
-          <div><a href="/post/<%= post1.post.author._id %>/delete">Delete</a></div>
+          <div><a href="/post/<%= post1.post._id %>/edit">Edit</a></div>
+          <div><a href="/post/<%= post1.post._id %>/delete">Delete</a></div>
      <% } %>
+     <a href="/">Back</a>
   </div>

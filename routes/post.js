@@ -5,6 +5,7 @@ const middlewares = require('../middleware/middlewares');
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Types.ObjectId;
 
+// create a new post
 router.get('/new', middlewares.userExist, (req, res, next) => {
   res.render('posts/newpost', { messages: req.flash('error') });
 });
@@ -27,7 +28,6 @@ router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
     .then(() => {
       res.redirect('/');
     })
-
     .catch((error) => {
       next(error);
     });
@@ -41,9 +41,6 @@ router.get('/:id', middlewares.userExist, (req, res, next) => {
   Post.findById(id)
     .populate('author')
     .then(post => {
-      // new object with current user & post oject
-      console.log(post.author._id);
-      console.log(userId);
       const post1 = {
         post,
         userId
@@ -58,12 +55,37 @@ router.get('/:id', middlewares.userExist, (req, res, next) => {
 // delete
 router.get('/:id/delete', middlewares.userExist, (req, res, next) => {
   const id = req.params.id;
-  Post.findOneAndRemove({ _id: id })
+  Post.findByIdAndRemove(id)
     .then(result => {
       res.redirect('/');
     })
     .catch((error) => {
       next(error);
+    });
+});
+
+// edit
+router.get('/:id/edit', middlewares.userExist, (req, res, next) => {
+  const id = req.params.id;
+  Post.findById(id)
+    .then(post => {
+      console.log(post);
+      res.render('posts/editpost', { post });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+router.post('/:id/edit', middlewares.userExist, (req, res, next) => {
+  const post = req.body;
+  const id = req.params.id;
+  Post.findByIdAndUpdate(id, post)
+    .then((result) => {
+      res.redirect('/');
+    })
+    .catch(error => {
+      console.log(error);
     });
 });
 
