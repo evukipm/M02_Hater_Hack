@@ -91,15 +91,8 @@ a {
 
 .post-title{
   border-bottom:2px solid var(--azul-cor);
-}
-.post-title a{
-  font-size:20px;
-  text-decoration:none;
-  color:var(--azul-cor);
-}
-
-.post-info{
-  display:flex;
+  font-size: 25px;
+  text-decoration: none
 }
 
 .post-text{
@@ -145,7 +138,6 @@ a {
   display: inline-block;
   font-size: 13px;
   margin-left: 5px;
-
 }
 
 .post .author-link {
