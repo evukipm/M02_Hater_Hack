@@ -4,6 +4,7 @@
     <% post.forEach(post => { %>
     <div class="post">
       <div>
+        <img src="<%= post.author.avatar %>">
         <div class="post-title"><a href="/post/<%= post._id %>"><%= post.title %></a></div>
       </div>
       <div class="info-container">
