@@ -4,8 +4,8 @@
   <div class="post-container">
     <% post.forEach(post => { %>
     <div class="post">
-      <div>
-        <img src="<%= post.author.avatar %>">
+      <div class="index-post-section">
+        <img class="index-post-avatar" src="<%= post.author.avatar %>">
         <div class="post-title"><a href="/post/<%= post._id %>"><%= post.title %></a></div>
       </div>
       <div class="info-container">

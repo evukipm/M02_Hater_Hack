@@ -157,9 +157,37 @@ a {
   box-shadow:2px 2px 4px var(--azul-osc);
 }
 
-.move{
-  margin-left:100px;
-  transition:1.5s;
+.index-post-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.index-post-avatar {
+  width: 40px;
+  height: 40px; 
+  margin-right: 20px
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px; 
+  margin-right: 20px
+}
+
+.coment-avatar {
+  width: 40px;
+  height: 40px; 
+  margin-right: 20px 
+}
+
+.post-title a{
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.post-title {
+  font-size: 25px;
+  text-decoration: none;
 }
 
 .post .info-container {
@@ -182,16 +210,6 @@ a {
   margin-right: 5px;
   margin-bottom: 5px;
   color: rgb(60, 80, 80)
-}
-
-.post-title a{
-  font-size: 25px;
-  text-decoration: none;
-}
-
-.post-title {
-  font-size: 25px;
-  text-decoration: none;
 }
 
 .post-text{
@@ -223,6 +241,11 @@ a {
 .post .main-text {
   margin-bottom: 20px;
   font-size: 16px;
+}
+
+.move{
+  margin-left:100px;
+  transition:1.5s;
 }
 
 /** ---- navbar ---- */
