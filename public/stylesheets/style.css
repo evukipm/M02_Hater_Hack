@@ -8,11 +8,7 @@
   --azul-buttons-corp: rgb(36, 122, 185);
   --gris-cor:#959ba0;
   --negro-navbar: rgb(51, 55, 58);
-
-
 }
-
-
 
 html{
   font-family:sans-serif;
@@ -139,6 +135,12 @@ a {
 .main-container{
   margin-top: 100px;
 }
+
+.main-container h1{
+  text-align:center;
+  font-size: 25px;
+}
+
 .post-container{
   width:100vw;
   transition:1.5s;
@@ -226,26 +228,54 @@ a {
 /** ---- navbar ---- */
 .navbar{
   position:fixed;
-  display: flex;
-  top: 0px;
-  width:100vh;
+  width: 100vw;
+  top: 0;
   background: var(--negro-navbar);
-  text-align:center;
   overflow:hidden;
   transition:1.5s;
-}
-
-.nav-container {
   display: flex;
-  flex-direction: row;
+  padding-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.nav-container .nav-logo-image {
+.nav-avatar {
+  height: 50px;
+}
+
+.nav-logo-image {
   width: 80%;
-
 }
 
+.nav-elements {
+  margin: 0px 20px;
+}
 
+.navbar-options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-options a {
+  text-decoration: none;
+  color:var(--gris-cor);
+  font-size: 20px;
+}
+
+.navbar-options i {
+  text-decoration: none;
+  color:var(--gris-cor);
+  font-size: 30px;
+}
+
+.navbar-options a:hover{
+  color:var(--blanco);
+}
 
 .menu i {
   color: white;
@@ -256,18 +286,7 @@ a {
   width:150px;
   transition:1.5s;
 }
-.navbar img{
-  width:50px;
-}
-.navbar a{
-  margin:5px;
-  padding:10px;
-  text-align:center;
-  background:var(--azul-cor);
-  color:black;
-  text-decoration:none;
-  border-radius:4px;
-}
+
 
 /** ---- Profile ---- **/
 .profile{
