@@ -160,6 +160,7 @@ a {
 .index-post-section {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .index-post-avatar {
@@ -183,6 +184,7 @@ a {
 .post-title a{
   font-size: 25px;
   text-decoration: none;
+  color: #007db7;
 }
 
 .post-title {
@@ -203,9 +205,10 @@ a {
 .post .author-link {
   font-size: 13px;
   text-decoration: none;
+  color: #007db7;
 }
 
-.info-container .date {
+.info-container {
   font-size: 13px;
   margin-right: 5px;
   margin-bottom: 5px;
@@ -222,6 +225,20 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.icon-hater {
+  width: 25%;
+}
+
+.button-score {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.button-img {
+  width: 25px;
+}
+
 
 .post-buttons button{
   border:none;
@@ -314,13 +331,26 @@ a {
 /** ---- Profile ---- **/
 .profile{
   text-align:center;
-  width:50%;
+  width:80%;
   background:var(--blanco);
   color:var(--azul-osc);
   margin:50px auto;
   padding:20px;
   border-radius:4px;
 }
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.profile-header h1{
+  font-size: 30px;
+}
+
 .profile img{
   width:30%;
 }
