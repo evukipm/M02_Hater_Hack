@@ -6,7 +6,6 @@ const uploadCloud = require('../services/cloudinary.js');
 
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
-
   User.findById(id)
     .then(user => {
       Post.find({ author: id })
