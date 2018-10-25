@@ -32,7 +32,7 @@ router.post('/:id', (req, res, next) => {
         post.hateButtons.buttonD++;
         post.save();
       }
-      res.redirect('/');
+      res.json(post);
     })
     .catch(next);
 });
