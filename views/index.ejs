@@ -15,31 +15,33 @@
       <div class="post-text"><%= post.text %></div>
       <hr>
       <div class="post-buttons">
-        <form action="/<%= post._id %>" method="post">
-          <label for="a" id="<%= post._id %>"><%= post.hateButtons.buttonA %></label>
-          <button name="button" value="a" type="submit"><img src="/images/pizza.png" alt=""></button>
-          <label for="b" id="<%= post._id %>"><%= post.hateButtons.buttonB %></label>
-          <button name="button" value="b" type="submit"><img src="/images/balloon.png" alt=""></button>
-          <label for="c" id="<%= post._id %>"><%= post.hateButtons.buttonC %></label>
-          <button name="button" value="c" type="submit"><img src="/images/baby-cry.png" alt=""></button>
-          <label for="d" id="<%= post._id %>"><%= post.hateButtons.buttonD %></label>
-          <button name="button" value="d" type="submit"><img src="/images/blackboard.png" alt=""></button>
-        </form>
+          <button name="button" value="a" id="<%= post._id %>"><span><%= post.hateButtons.buttonA %></span><img src="/images/pizza.png" alt=""></button>
+          <button name="button" value="b" id="<%= post._id %>"><span><%= post.hateButtons.buttonB %></span><img src="/images/balloon.png" alt=""></button>
+          <button name="button" value="c" id="<%= post._id %>"><span><%= post.hateButtons.buttonC %></span><img src="/images/baby-cry.png" alt=""></button>
+          <button name="button" value="d" id="<%= post._id %>"><span><%= post.hateButtons.buttonD %></span><img src="/images/blackboard.png" alt=""></button>
       </div>
     </div>
     <% }) %>
   </div>
 </div>
 
+<script src="/javascripts/axios.js"></script>
 <script>
-  const label = document.querySelectorAll('label');
+  const buttons = document.querySelectorAll('button');
 
-  axios.get('/api/likes')
-  .then(posts => {
-    console.log(posts) 
-  })
-  .catch(error => {
-    console.log(error)
-  })
-
+    buttons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        axios.post('/api/likes', {
+          postId: `${button.id}`,
+          button: `${button.value}`
+        })
+          .then(({ data }) => {
+            const span = button.querySelector('span')
+            span.innerHTML = data
+          })
+          .catch(error => {
+            console.log(error);
+          })
+      })
+    })
 </script>
