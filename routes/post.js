@@ -1,5 +1,6 @@
 const express = require('express');
 const Post = require('../models/crypost');
+const Coment = require('../models/coment');
 const router = express.Router();
 const middlewares = require('../middleware/middlewares');
 const mongoose = require('mongoose');
@@ -41,11 +42,11 @@ router.get('/:id', middlewares.userExist, (req, res, next) => {
   Post.findById(id)
     .populate('author')
     .then(post => {
-      const post1 = {
-        post,
-        userId
-      };
-      res.render('../views/posts/postdetails', { post1 });
+      Coment.find({ post: id })
+        .populate('author')
+        .then(coments => {
+          res.render('posts/postdetails', { post, coments });
+        });
     })
     .catch(error => {
       next(error);
@@ -87,6 +88,29 @@ router.post('/:id/edit', middlewares.userExist, (req, res, next) => {
     .catch(error => {
       console.log(error);
     });
+});
+
+router.post('/:id/coment', (req, res, next) => {
+  const postId = req.params.id;
+  const userId = req.session.currentUser._id;
+  const coment = req.body;
+  coment.author = ObjectId(userId);
+  coment.post = ObjectId(postId);
+  const f = new Date();
+  coment.date = `el ${f.getDate()}/${f.getMonth()}/${f.getFullYear()} a las ${f.getHours()}:${f.getMinutes()}`;
+  coment.hateButtons = {
+    buttonA: 0,
+    buttonB: 0,
+    buttonC: 0,
+    buttonD: 0
+  };
+
+  const comentary = new Coment(coment);
+  comentary.save()
+    .then(() => {
+      res.redirect(`/post/${postId}`);
+    })
+    .catch(next);
 });
 
 module.exports = router;
