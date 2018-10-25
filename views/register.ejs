@@ -1,18 +1,55 @@
 <div class="login">
-  <h1 class="title">Hater<span>Hack</span></h1>
-  <h2>Ah, ¿que quieres entrar?</h2>
-  <form action="/auth/register" method="post">
-    <label for="name">Nombre:</label>
-    <input type="text" name="name">
-    <p><% if (locals.message){ %>
-      <%= locals.message %>
-    <% } %></p>
-    <label for="password">Contraseña:</label>
-    <input type="password" name="password">
-    <p><% if (locals.message){ %>
-      <%= locals.message %>
-    <% } %></p>
-    <button type="submit">Entrar</button>
-  </form>
-  <a href="/auth/login">¿Ya tienes cuenta?</a>
+  <img class="iron-logo" src="/images/ironLogo.png" alt="iron-logo">
+  <div class="login-form">
+    <form action="/auth/register" method="post">
+      <input class="login-input-field" type="text" placeholder="User name" name="name">
+      <p><% if (locals.message){ %>
+        <%= locals.message %>
+      <% } %></p>
+      <input class="login-input-field" type="password" placeholder="Password" name="password">
+      <div class="register-options">
+        <div class="radio-buttons">
+          <input type="radio" name="radioButton"  />
+        </div>
+        <div class="radio-buttons-text">
+          <label for="registerOptions">Angular</label>
+        </div>
+        <div class="radio-buttons">
+          <input type="radio" name="radioButton"  />
+        </div>
+        <div class="radio-buttons-text">
+          <label for="registerOptions">React</label>
+        </div>
+        <div class="radio-buttons">
+          <input type="radio" name="radioButton"  />
+        </div>
+        <div class="radio-buttons-text">
+          <label for="registerOptions">Ah! Que eres de UX?</label>
+        </div>
+      </div>
+      
+        
+
+      <%- include partials/errors %>
+      <button class="login-buton-submit" type="submit">Registrarse</button>
+    </form>
+    <a class="login-register-link" href="/auth/login">¿Vaya vaya, así que ya tienes cuenta?</a>
+  </div>
 </div>
+
+<script>
+let allRadios = document.getElementsByName('radioButton');
+let booRadio;
+let x = 0;
+for(x = 0; x < allRadios.length; x++){
+  allRadios[x].onclick = function() {
+    if(booRadio == this){
+      this.checked = false;
+      booRadio = null;
+    } else {
+      booRadio = this;
+    }
+  };
+}
+
+</script>

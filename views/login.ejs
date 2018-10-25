@@ -1,16 +1,18 @@
 <div class="login">
-  <h1 class="title">Hater<span>Hack</span></h1>
-  <h2>Ah, ¿otra vez tú?</h2>
-  <form action="/auth/login" method="post">
-    <label for="name">Nombre:</label>
-    <input type="text" name="name">
-    <p><% if (locals.message){ %>
-      <%= locals.message %>
-    <% } %></p>
-    <label for="password">Contraseña:</label>
-    <input type="password" name="password">
-    <%- include partials/errors %>
-    <button type="submit">Entrar</button>
-  </form>
-  <a href="/auth/register">¿No tienes cuenta?</a>
+  <img class="iron-logo" src="/images/ironLogo.png" alt="iron-logo">
+  <!-- <h1 class="title">Hater<span>Hack</span></h1> -->
+  <h2 class="login-title">Hater Student Platform</h2>
+  <p>Haters gona hate</p>
+  <div class="login-form">
+    <form action="/auth/login" method="post">
+      <input class="login-input-field" type="text" placeholder="User name" name="name">
+      <p><% if (locals.message){ %>
+        <%= locals.message %>
+      <% } %></p>
+      <input class="login-input-field" type="password" placeholder="Password" name="password">
+      <%- include partials/errors %>
+      <button class="login-buton-submit" type="submit">Entrar</button>
+    </form>
+    <a class="login-register-link" href="/auth/register">¿Ah, que quieres entrar?</a>  
+  </div>
 </div>

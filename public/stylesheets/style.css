@@ -3,18 +3,32 @@
   --azul-cor:#61C1F9;
   --azul-osc:#00244E;
   --blanco:#FCFCFC;
+  --negro-cor: rgb(53, 58, 61);
+  --yellow-cor: rgb(250, 255, 189);
+  --azul-buttons-corp: rgb(36, 122, 185);
+  --gris-cor:#959ba0;
+  --negro-navbar: rgb(51, 55, 58);
+
+
 }
 
-*{
-  margin:0;
-  padding:0;
+
+
+html{
+  font-family:sans-serif;
+  -ms-text-size-adjust:100%;
+  -webkit-text-size-adjust:100%;
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color:var(--negro-cor);
+  /*
   background-image: linear-gradient(to right bottom, #048cc0, #2999ce, #3ea6dc, #50b3eb, #61c1f9);
+  */
   background-attachment: fixed;
-  background-size: cover;
+
   color:var(--blanco);
 }
 
@@ -23,6 +37,86 @@ a {
 }
 
 /* ---- login and register ---- */
+.login{
+  width: 100%;
+  margin:0 auto;
+  text-align:center;
+}
+.login input, .login a, .login button{
+  display:block;
+  margin:5px auto 20px;
+  padding:10px;
+  font-size:14px;
+  border:none;
+  outline:none;
+}
+
+.iron-logo {
+  margin-top:30px;
+  width: 230px;
+  display: inline-block;
+}
+
+.login-title {
+  font-size: 30px;
+  margin-bottom: -10px;
+}
+
+.login-form {
+  padding-top: 40px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.login-input-field {
+  height: 20px;
+  border-radius: 5px;
+  width: 90%
+}
+
+.login-input-field:focus {
+  background-color: var(--yellow-cor);
+}
+
+.login-buton-submit {
+  background-color:var(--azul-buttons-corp);
+  color:white;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 95%;
+  height: 50px;
+}
+
+.login-register-link, p {
+  color:var(--gris-cor);
+  text-decoration:none;
+}
+
+.register-options {
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.radio-buttons {
+  margin: 0 auto;
+}
+
+.radio-buttons-text {
+  margin-right: 15px;
+}
+
+.radio-buttons-for-ux {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: 0 auto;
+}
+
 .title{
   font-family: 'Roboto';
   font-weight: 900;
@@ -39,37 +133,8 @@ a {
   display:block;
   font-weight: 100;
 }
-.login h2{
-  margin-bottom:10px;
-}
-.login{
-  width: 70%;
-  margin:0 auto;
-  text-align:center;
-}
-.login input, .login a, .login button{
-  display:block;
-  margin:5px auto 20px;
-  width:80%;
-  padding:10px;
-  font-size:1.5em;
-  border:none;
-  outline:none;
-}
-.login label{
-  margin:0;
-  color:var(--azul-osc);
-  font-size:1.5em;
-}
-.login button{
-  background:var(--azul-osc);
-  color:var(--blanco);
-}
 
-.login a{
-  color:var(--azul-osc);
-  text-decoration:none;
-}
+
 /** ---- main ---- */
 .main-container{
   margin-top: 100px;
@@ -164,11 +229,29 @@ a {
   display: flex;
   top: 0px;
   width:100vh;
-  background:black;
+  background: var(--negro-navbar);
   text-align:center;
   overflow:hidden;
   transition:1.5s;
 }
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-container .nav-logo-image {
+  width: 80%;
+
+}
+
+
+
+.menu i {
+  color: white;
+  font-size: 30px;
+}
+
 .open{
   width:150px;
   transition:1.5s;

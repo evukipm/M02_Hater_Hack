@@ -1,16 +1,27 @@
 <div class="burger"></div>
 <div class="navbar">
-  <div class="nav-close">X</div>
-  <div class="nav-container">
-    <div>
-      <img src="<%= currentUser.avatar %>">
-    </div>
-    <div>
-      <h2><%= currentUser.username %></h2>
-      <a href="/auth/logout">Logout</a>
-      <a href="/post/new">Nueva entrada</a>
-      <a href="/profile/<%= currentUser._id %>">Ver tu perfil</a>
-      <a href="/profile/<%= currentUser._id %>/edit">Edita tu perfil</a>
-    </div>
+<div class="nav-container">
+  <div>
+    <img src="<%= currentUser.avatar %>">
+  </div>
+  <div>
+    <img class="nav-logo-image" src="/images/ironLogo-block.png" alt="logo-iron-fack">
+  </div>
+  
+  <div class="menu">
+  <i class="fas fa-bars"></i>
+  </div>
+  <!--
+  <div>
+    <h2><%= currentUser.username %></h2>
+  </div>
+  <a href="/auth/logout">Logout</a>
+    <a href="/post/new">Nueva entrada</a>
+    <a href="/profile/<%= currentUser._id %>">Ver tu perfil</a>
+    <a href="/profile/<%= currentUser._id %>/edit">Edita tu perfil</a>
+    <div class="nav-close">X</div>
+    -->
   </div>
 </div>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
