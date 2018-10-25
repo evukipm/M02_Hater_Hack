@@ -122,6 +122,11 @@ a {
   text-decoration: none;
 }
 
+.post-title {
+  font-size: 25px;
+  text-decoration: none;
+}
+
 .post-text{
   margin-bottom: 30px;
 }
@@ -194,3 +199,86 @@ a {
 .profile img{
   width:30%;
 }
+
+/** -- New Post --**/
+.new-post-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.new-post-title {
+  font-size: 30px;
+  display: inline-block;
+  margin-left: 15px;
+  width: 78%;
+}
+
+.new_post_back-button {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  margin-right: 10px;
+
+}
+
+.post-title-area {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.post-title-area label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.post-label-text {
+  margin-top: 10px;
+}
+
+.post-title-area input {
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+}
+
+.post-text-area {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.post-text-area label {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.post-text-area textarea {
+  height: 300px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.new-post-button-submit {
+  margin-top: 30px;
+}
+
+.new-post-button-submit {
+  border: 1px solid rgb(42, 100, 225);
+  border-radius: 10px;
+  background-color: rgb(42, 100, 225);
+  width: 60%;
+  color: white;
+  margin: 40px auto;
+  text-align: center;
+  padding: 10px;
+}
+
+
+

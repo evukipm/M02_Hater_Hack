@@ -1,15 +1,20 @@
-<div class="post-container">
-      <div><%= post1.post.title %></a></div>
-      <div><%= post1.post.author.username %></a></div>
-      <div><%= post1.post.date %></div>
-      <div><%= post1.post.text %></div>
-
-      <div><%= post1.userId %></div>
-      <div><%= post1.post.author._id %></div>
-
-      <% if(post1.userId == post1.post.author._id){ %>
-          <div><a href="/post/<%= post1.post._id %>/edit">Edit</a></div>
-          <div><a href="/post/<%= post1.post._id %>/delete">Delete</a></div>
-     <% } %>
+<div class="post">
+    <div>
+        <div class="post-title"> <%= post1.post.title %> </a></div>
+    </div>
+    <div class="info-container">
+        <p class="main-author">By: </p>
+        <p class="author-link"> <%= post1.post.author.username %> </p>
+        <p class="date"><%= post1.post.date %></p>
+        <hr>
+    </div>
+    <div class="post-text"><%= post1.post.text %></div>
+    <hr>
+    <div class="post-buttons">
+        <% if(post1.userId == post1.post.author._id){ %>
+            <div><a href="/post/<%= post1.post._id %>/edit">Edit</a></div>
+            <div><a href="/post/<%= post1.post._id %>/delete">Delete</a></div>
+        <% } %>
+    </div>
      <a href="/">Back</a>
   </div>

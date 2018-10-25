@@ -1,9 +1,18 @@
 <form action="/post/new" method="post">
-  <label for="title">Título</label>
-  <input type="text" name="title">
-  <label for="text">Text</label>
-  <textarea name="text"></textarea>
+  <div class="new-post-header">
+    <p class="new-post-title">New post</p>
+    <a class="new_post_back-button" href="/"> < Back</a>
+  </div>
+  <div class="post-title-area">
+    <label class="post-title"for="title">Title:</label>
+    <input type="text" name="title">
+  </div>
+  <div class="post-text-area">
+    <label class="post-label-text" for="text">Text:</label>
+    <textarea name="text"></textarea>
+  </div>
   <%- include ../partials/errors.ejs %>
-  <input type="submit" value="Llorar">
-  <a href="/">Back</a>
+  <div class="new-post-button-submit">
+    <input type="submit" value="Post & Cry">
+  </div>
 </form>
