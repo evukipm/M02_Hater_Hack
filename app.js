@@ -7,12 +7,14 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const axios = require('axios');
 require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const postRouter = require('./routes/post');
 const authRouter = require('./routes/auth');
 const profileRouter = require('./routes/profile');
+const apiRouter = require('./routes/likes');
 const middlewares = require('./middleware/middlewares');
 
 const app = express();
@@ -71,6 +73,7 @@ app.use('/', indexRouter);
 app.use('/post', postRouter);
 app.use('/auth', authRouter);
 app.use('/profile', profileRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
