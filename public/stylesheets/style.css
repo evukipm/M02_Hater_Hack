@@ -20,11 +20,7 @@ body {
   margin: 0;
   padding: 0;
   background-color:var(--negro-cor);
-  /*
-  background-image: linear-gradient(to right bottom, #048cc0, #2999ce, #3ea6dc, #50b3eb, #61c1f9);
-  */
   background-attachment: fixed;
-
   color:var(--blanco);
 }
 
@@ -32,6 +28,12 @@ a {
   color: var(--azul-cor);
 }
 
+h2{
+  text-align:center;
+  color:var(--azul-cor);
+  border-bottom:1px solid var(--azul-buttons-corp);
+  margin:0;
+}
 /* ---- login and register ---- */
 .login{
   width: 100%;
@@ -49,10 +51,19 @@ a {
 }
 
 .profile-link a{
-  display:block;
-  font-size:14px;
-  padding:10px;
-  width: 90%;
+  display:inline-block;
+  font-size:16px;
+  background:var(--azul-cor);
+  color:var(--blanco);
+  padding:5px 10px;
+  margin:10px;
+  border-radius:4px;
+  text-decoration:none;
+}
+.profile-link{
+  width: 80%;
+  margin:0 auto;
+  border-radius:4px;
 }
 
 .post-link-list {
@@ -187,7 +198,11 @@ select {
   font-weight: 100;
 }
 
-
+.info{
+  text-align:center;
+  font-size:16px;
+  color:var(--azul-buttons-corp);
+}
 /** ---- main ---- */
 .main-container{
   margin-top: 100px;
@@ -219,11 +234,13 @@ select {
 .postdetail{
   font-size:16px;
   background:var(--blanco);
-  margin-top:120px;
   color:black;
   padding:15px;
   border-radius: 15px;
   box-shadow:2px 2px 4px var(--azul-osc);
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 80%;
 }
 
 
@@ -236,19 +253,24 @@ select {
 .index-post-avatar {
   width: 40px;
   height: 40px; 
-  margin-right: 20px
+  margin-right: 20px;
+  border-radius:50%;
 }
 
 .post-avatar {
+  border-radius:50%;
   width: 40px;
   height: 40px; 
   margin-right: 20px
 }
 
 .coment-avatar {
+  display: flex;
+  align-items: center;
   width: 40px;
   height: 40px; 
-  margin-right: 20px 
+  margin-right: 20px;
+  border-radius:50%;
 }
 
 .post-title a{
@@ -260,11 +282,22 @@ select {
 .post-title {
   font-size: 25px;
   text-decoration: none;
+  
 }
 
-.post .info-container {
-  margin-bottom: 20px;
-  margin-top: 5px;
+.post-title-coment {
+  font-size: 18px;
+  text-decoration: none;
+  color: #007db7;
+}
+
+
+.info-container img{
+  height:12px;
+  padding-right:5px;
+}
+.coment-lenght{
+  text-align:right;
 }
 
 .post .main-author {
@@ -282,18 +315,30 @@ select {
   font-size: 13px;
   margin-right: 5px;
   margin-bottom: 5px;
-  color: rgb(60, 80, 80)
+  color: var(--azul-cor);
+  display:flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+.info-container p{
+  display:block;
 }
 
 .post-text{
-  margin-bottom: 30px;
+  margin: 20px 0;
 }
 
 .post-buttons{
-  margin-top: 30px;
+  margin-top: 10px;
   display:flex;
-  justify-content: center;
   align-items: center;
+}
+
+.post-buttons a, input {
+
+  text-decoration: none;
+  font-size: 14px;
+  color:var(--azul-buttons-corp);
 }
 
 .icon-hater {
@@ -314,10 +359,32 @@ select {
   background:none;
   height:25px;
 }
+
 .post-buttons label{
   height:15px;
   padding:5px;
 }
+
+.coment{
+  margin-bottom: 30px;
+}
+
+.post-coment {
+  display:block;
+  margin:5px auto 20px;
+  padding:10px;
+  font-size:14px;
+  border:none;
+  outline:none;
+}
+
+.post-detail-title {
+  margin-top: 20px;
+}
+
+
+
+
 
 .info-container p {
   display: inline-block;
@@ -352,6 +419,7 @@ select {
 
 .nav-avatar {
   height: 50px;
+  border-radius:50%;
 }
 
 .nav-logo-image {
@@ -362,17 +430,22 @@ select {
   margin: 0px 20px;
 }
 
-.navbar-options {
+.navbar-options, .navbar-options input{
   display: flex;
   flex-direction: column;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background:none;
+  border:none;
+  color:var(--gris-cor);
+  font-size:18px!important;
 }
 
 .navbar-options a {
   text-decoration: none;
   color:var(--gris-cor);
+  padding:5px;
   font-size: 20px;
 }
 
