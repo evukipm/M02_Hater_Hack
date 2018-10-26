@@ -23,19 +23,26 @@ router.get('/:id/edit', (req, res, next) => {
 
 router.post('/:id/edit', uploadCloud.single('avatar'), (req, res, next) => {
   const id = req.params.id;
-  const name = req.body.username;
-  const description = req.body.description;
-  const cohort = req.body.cohort;
-  const campus = req.body.campus;
-  const avatar = req.file.url;
+  const body = req.body;
+  console.log(req.file);
+  let avatar = false;
+  if (req.file) {
+    avatar = req.file.url;
+  }
 
   User.findById(id)
     .then(user => {
-      user.avatar = avatar;
-      user.username = name;
-      user.description = description;
-      user.cohort = cohort;
-      user.campus = campus;
+      if (avatar) {
+        user.avatar = avatar;
+      } else if (body.name) {
+        user.username = body.name;
+      } else if (body.description) {
+        user.description = body.description;
+      } else if (body.cohort) {
+        user.cohort = body.cohort;
+      } else if (body.campus) {
+        user.campus = body.campus;
+      }
       user.save();
       res.redirect(`/profile/${id}`);
     })

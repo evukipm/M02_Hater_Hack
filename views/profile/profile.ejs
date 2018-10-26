@@ -31,17 +31,14 @@
       </form>
     </div>
   </div>
-</div>
-<div class="profile-link">
+  <h2>Tus mensajes</h2>
+  <div class="profile-link">
   <% if(post) { %>
     <% post.forEach(post => {%>
-    <ul>
-      <li class="post-link-list">
         <a href="/post/<%= post._id %>"><%= post.title %></a>
-      </li>
-    </ul>
-  <% }) %>
-  <% } else { %>
-    <p class="login-register-link">El usuario no ha escrito ningún post</p>
-  <% } %>
+    <% }) %>
+    <% } else { %>
+      <p class="login-register-link">El usuario no ha escrito ningún post</p>
+    <% } %>
+  </div>
 </div>

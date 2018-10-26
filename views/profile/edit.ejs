@@ -9,12 +9,8 @@
     <div class="login-form">
       <form action="/profile/<%= currentUser._id %>/edit" method="post" enctype="multipart/form-data">
         <div class="profile">
-
-        <input type="file" name="avatar" id="file" class="inputfile" />
-        <label for="file">Seleccionar archivo</label>
-          <!--
-          <p><input class="input-file-field" type="file" name="avatar"></p>
-          -->
+        <input type="file" name="avatar" id="file" class="inputfile" value="/images/avatar.png" />
+        <label for="avatar">Seleccionar archivo</label>
           <h3 class="username"><input class="login-input-field" type="text" name="username" value="<%= currentUser.username %>"></h3>
           <div class="description">
             <h3>Descripción</h3>
