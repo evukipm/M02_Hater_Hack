@@ -22,7 +22,7 @@ router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
   crypost.save()
     .then(() => {
       req.flash('info', 'Tu lloriqueo se ha subido correctamente');
-      return res.redirect('/', { messages: req.flash('info') });
+      return res.redirect('/');
     })
     .catch(next);
 });
