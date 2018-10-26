@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../models/crypost');
+const Post = require('../models/post');
 const Coment = require('../models/coment');
 
 router.post('/likes', (req, res, next) => {

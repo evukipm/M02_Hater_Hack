@@ -1,5 +1,5 @@
 const express = require('express');
-const Post = require('../models/crypost');
+const Post = require('../models/post');
 const Coment = require('../models/coment');
 const router = express.Router();
 const middlewares = require('../middleware/middlewares');
@@ -17,17 +17,12 @@ router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
   post.author = ObjectId(userId);
   const f = new Date();
   post.date = `el ${f.getDate()}/${f.getMonth()}/${f.getFullYear()} a las ${f.getHours()}:${f.getMinutes()}`;
-  post.hateButtons = {
-    buttonA: 0,
-    buttonB: 0,
-    buttonC: 0,
-    buttonD: 0
-  };
 
   const crypost = new Post(post);
   crypost.save()
     .then(() => {
-      return res.redirect('/');
+      req.flash('info', 'Tu lloriqueo se ha subido correctamente');
+      return res.redirect('/', { messages: req.flash('info') });
     })
     .catch(next);
 });
@@ -86,12 +81,6 @@ router.post('/:id/coment', (req, res, next) => {
   coment.post = ObjectId(postId);
   const f = new Date();
   coment.date = `el ${f.getDate()}/${f.getMonth()}/${f.getFullYear()} a las ${f.getHours()}:${f.getMinutes()}`;
-  coment.hateButtons = {
-    buttonA: 0,
-    buttonB: 0,
-    buttonC: 0,
-    buttonD: 0
-  };
 
   const comentary = new Coment(coment);
   comentary.save()

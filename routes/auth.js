@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Hater = require('../models/hater');
+const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const middlewares = require('../middleware/middlewares');
@@ -13,7 +13,7 @@ router.post('/register', middlewares.isEmpty, (req, res, next) => {
   const name = req.body.name;
   const pass = req.body.password;
 
-  Hater.find({ username: name })
+  User.find({ username: name })
     .then(user => {
       if (user.username === name) {
         req.flash('error', 'Lo sentimos, ese usuario ya existe');
@@ -22,7 +22,7 @@ router.post('/register', middlewares.isEmpty, (req, res, next) => {
         const salt = bcrypt.genSaltSync(saltRounds);
         const hashedPassword = bcrypt.hashSync(pass, salt);
 
-        Hater.create({ username: name, password: hashedPassword })
+        User.create({ username: name, password: hashedPassword })
           .then(user => {
             req.session.currentUser = user;
             return res.redirect('/');
@@ -41,7 +41,7 @@ router.post('/login', middlewares.isEmpty, (req, res, next) => {
   const hater = req.body;
   const name = hater.name;
 
-  Hater.findOne({ username: name })
+  User.findOne({ username: name })
     .then(user => {
       if (user) {
         if (bcrypt.compareSync(hater.password, user.password)) {
