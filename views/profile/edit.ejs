@@ -1,60 +1,75 @@
-<form action="/profile/<%= currentUser._id %>/edit" method="post" enctype="multipart/form-data">
-  <div class="profile">
-    <img src="<%= currentUser.avatar %>">
-    <input type="file" name="avatar">
-
-    <h1 class="username"><input type="text" name="username" value="<%= currentUser.username %>"></h1>
-    <div class="description">
-      <h2>Descripción</h2>
-      <% if(currentUser.description){ %>
-        <p><input type="text" name="description" value="<%= currentUser.description %>"></p>
-      <% } else { %>
-        <p><textarea name="description"></textarea></p>
-      <% } %>
-    </div>
-    <div class="cohort">
-      <h2>Cohort</h2>
-      <% if(currentUser.cohort){ %>
-        <p><input type="date" name="cohort" value="<%= currentUser.cohort %>"></p>
-      <% } else { %>
-        <p><input type="date" name="cohort"></p>
-      <% } %>
-    </div>
-    <div class="campus">
-      <h2>Campus</h2>
-      <% if(currentUser.campus){ %>
-        <p>
-          <select name="campus" value="<%= currentUser.campus %>">
-            <option value="Amsterdam">Amsterdam</option>
-            <option value="Barcelona">Barcelona</option>
-            <option value="Berlin">Berlin</option>
-            <option value="Bogotá">Bogotá</option>
-            <option value="Lisbon">Lisbon</option>
-            <option value="Madrid">Madrid</option>
-            <option value="Mexico">Mexico</option>
-            <option value="Miami">Miami</option>
-            <option value="Munich">Munich</option>
-            <option value="Paris">Paris</option>
-            <option value="Sao Paolo">Sao Paolo</option>
-          </select>
-        </p>
-      <% } else { %>
-        <p>
-          <select name="campus">
-            <option value="Amsterdam">Amsterdam</option>
-            <option value="Barcelona">Barcelona</option>
-            <option value="Berlin">Berlin</option>
-            <option value="Bogotá">Bogotá</option>
-            <option value="Lisbon">Lisbon</option>
-            <option value="Madrid">Madrid</option>
-            <option value="Mexico">Mexico</option>
-            <option value="Miami">Miami</option>
-            <option value="Munich">Munich</option>
-            <option value="Paris">Paris</option>
-            <option value="Sao Paolo">Sao Paolo</option>
-          </select></p>
-      <% } %>
-    </div>
-    <button type="submit">Enviar</button>
+<%- include ../partials/navbar %>
+<div class="main-container">
+  <div class="profile-header">
+    <h1>Profile de <%= currentUser.username %></h1>
+    <a class="new_post_back-button" href="/"> < Back</a>
   </div>
-</form>
+  <div class="login">
+    <img class="profile-img" src="<%= currentUser.avatar %>">
+    <div class="login-form">
+      <form action="/profile/<%= currentUser._id %>/edit" method="post" enctype="multipart/form-data">
+        <div class="profile">
+
+        <input type="file" name="avatar" id="file" class="inputfile" />
+        <label for="file">Seleccionar archivo</label>
+          <!--
+          <p><input class="input-file-field" type="file" name="avatar"></p>
+          -->
+          <h3 class="username"><input class="login-input-field" type="text" name="username" value="<%= currentUser.username %>"></h3>
+          <div class="description">
+            <h3>Descripción</h3>
+            <% if(currentUser.description){ %>
+              <p><input class="login-input-field" type="text" name="description" value="<%= currentUser.description %>"></p>
+            <% } else { %>
+              <p><textarea class="newpost-input-textarea" placeholder="Añadir descripción..." name="description"></textarea></p>
+            <% } %>
+          </div>
+          <div class="cohort">
+            <h3>Cohort</h3>
+            <% if(currentUser.cohort){ %>
+              <p><input class="login-input-field" type="date" name="cohort" value="<%= currentUser.cohort %>"></p>
+            <% } else { %>
+              <p><input class="login-input-field" type="date" name="cohort"></p>
+            <% } %>
+          </div>
+          <div class="campus">
+            <h3>Campus</h3>
+            <% if(currentUser.campus){ %>
+              <p>
+                <select class="login-input-field select-style" name="campus" value="<%= currentUser.campus %>">
+                  <option value="Amsterdam">Amsterdam</option>
+                  <option value="Barcelona">Barcelona</option>
+                  <option value="Berlin">Berlin</option>
+                  <option value="Bogotá">Bogotá</option>
+                  <option value="Lisbon">Lisbon</option>
+                  <option value="Madrid">Madrid</option>
+                  <option value="Mexico">Mexico</option>
+                  <option value="Miami">Miami</option>
+                  <option value="Munich">Munich</option>
+                  <option value="Paris">Paris</option>
+                  <option value="Sao Paolo">Sao Paolo</option>
+                </select>
+              </p>
+            <% } else { %>
+              <p>
+                <select name="campus">
+                  <option value="Amsterdam">Amsterdam</option>
+                  <option value="Barcelona">Barcelona</option>
+                  <option value="Berlin">Berlin</option>
+                  <option value="Bogotá">Bogotá</option>
+                  <option value="Lisbon">Lisbon</option>
+                  <option value="Madrid">Madrid</option>
+                  <option value="Mexico">Mexico</option>
+                  <option value="Miami">Miami</option>
+                  <option value="Munich">Munich</option>
+                  <option value="Paris">Paris</option>
+                  <option value="Sao Paolo">Sao Paolo</option>
+                </select></p>
+            <% } %>
+          </div>
+          </div>
+        <button class="newpost-login-buton-submit" type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>

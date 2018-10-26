@@ -1,19 +1,19 @@
 <%- include ../partials/navbar %>
-<form action="/post/new" method="post">
-  <div class="new-post-header">
-    <p class="new-post-title">New post</p>
-    <a class="new_post_back-button" href="/"> < Back</a>
+<div class="main-container">
+  <div class="login">
+    <div class="profile-header">
+      <h1>New post</h1>
+      <a class="new_post_back-button" href="/"> < Back</a>
+    </div>
+    <div class="login-form">
+      <form action="/post/new" method="post">
+        <input class="login-input-field" type="text" placeholder="Title" name="title">
+        <textarea class="newpost-input-textarea" placeholder="Spread the hate here..." name="text"></textarea>
+        <%- include ../partials/errors.ejs %>
+        <button class="newpost-login-buton-submit" type="submit">Post</button>
+      </form>
+    </div>
   </div>
-  <div class="post-title-area">
-    <label class="post-title"for="title">Title:</label>
-    <input type="text" name="title">
-  </div>
-  <div class="post-text-area">
-    <label class="post-label-text" for="text">Text:</label>
-    <textarea name="text"></textarea>
-  </div>
-  <%- include ../partials/errors.ejs %>
-  <div class="new-post-button-submit">
-    <input type="submit" value="Post & Cry">
-  </div>
-</form>
+</div>
+
+

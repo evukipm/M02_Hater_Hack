@@ -1,54 +1,94 @@
-<div class="post">
-    <div>
-        <div class="post-avatar"><img src="<%= post.author.avatar %>"></div>
-        <div class="post-title"> <%= post.title %> </a></div>
+<%- include ../partials/navbar %>
+<div class="main-container">
+    <div class="profile-header">
+        <h1>Detalle del post</h1>
+        <a class="new_post_back-button" href="/"> < Atrás</a>
     </div>
-    <div class="info-container">
-        <p class="main-author">By: </p>
-        <p class="author-link"> <%= post.author.username %> </p>
-        <p class="date"><%= post.date %></p>
+    <div class="postdetail">
+        <div class="index-post-section">
+            <div><img class="post-avatar" src="<%= post.author.avatar %>"></div>
+            <div class="post-title"> <%= post.title %> </a></div>
+        </div>
+        <div class="info-container">
+            <p class="main-author">Por: </p>
+            <p class="author-link"><a href="/profile/<%= post.author._id %>"><%= post.author.username %></a></p>
+            <p class="date"><%= post.date %></p>
+            <hr>
+        </div>
+        <div class="post-text"><%= post.text %></div>
         <hr>
-    </div>
-    <div class="post-text"><%= post.text %></div>
-    <hr>
-    <div class="post-buttons">
-        <% if(currentUser === post.author._id){ %>
-            <div><a href="/post/<%= post._id %>/edit">Edit</a></div>
-            <div><a href="/post/<%= post._id %>/delete">Delete</a></div>
-        <% } %>
-    </div>
-    <div class="post-coment-list">
-        <% if(coments){%>
-            <% coments.forEach(coment => {%>
-                <div class="coment">
-                    <div class="coment-avatar">
-                        <img src="<%= coment.author.avatar %>">
-                    </div>
-                    <div class="coment-container">
-                        <p class="coment-main-author">By: </p>
-                        <p class="coment-author-link"> <%= coment.author.username %> </p>
-                        <p class="coment-date"><%= coment.date %></p>
-                        <hr>
-                    </div>
-                    <div class="coment-text">
-                        <%= coment.coment %>
-                    </div>
-                    <hr>
-                    <div class="coment-buttons">
-                        <button name="button" value="a" id="<%= post._id %>"><span><%= post.hateButtons.buttonA %></span><img src="/images/pizza.png" alt=""></button>
-                        <button name="button" value="b" id="<%= post._id %>"><span><%= post.hateButtons.buttonB %></span><img src="/images/balloon.png" alt=""></button>
-                        <button name="button" value="c" id="<%= post._id %>"><span><%= post.hateButtons.buttonC %></span><img src="/images/baby-cry.png" alt=""></button>
-                        <button name="button" value="d" id="<%= post._id %>"><span><%= post.hateButtons.buttonD %></span><img src="/images/blackboard.png" alt=""></button>
-                    </div>
+        <% if(currentUser._id == post.author._id){ %>
+            <div class="post-buttons">
+                <div><a href="/post/<%= post._id %>/edit">Editar</a></div>
+                <div>
+                    <form action="/post/<%= post._id %>/delete" method="post">
+                        <input type="submit" value="Eliminar">
+                    </form>
                 </div>
-            <%})%>
+            </div>
         <% } %>
+        <div class="post-coment-list">
+            <% if(coments){%>
+                <% coments.forEach(coment => {%>
+                    <div class="coment">
+                        <div class="coment-avatar">
+                            <img src="<%= coment.author.avatar %>">
+                        </div>
+                        <div class="coment-container">
+                            <p class="coment-main-author">Por: </p>
+                            <p class="coment-author-link"> <%= coment.author.username %> </p>
+                            <p class="coment-date"><%= coment.date %></p>
+                            <hr>
+                        </div>
+                        <div class="coment-text">
+                            <%= coment.coment %>
+                        </div>
+                        <hr>
+                        <div class="coment-buttons">
+                            <button name="button" value="a" id="<%= coment._id %>"><span><%= coment.hateButtons.buttonA %></span><img src="/images/pizza.png" alt=""></button>
+                            <button name="button" value="b" id="<%= coment._id %>"><span><%= coment.hateButtons.buttonB %></span><img src="/images/balloon.png" alt=""></button>
+                            <button name="button" value="c" id="<%= coment._id %>"><span><%= coment.hateButtons.buttonC %></span><img src="/images/baby-cry.png" alt=""></button>
+                            <button name="button" value="d" id="<%= coment._id %>"><span><%= coment.hateButtons.buttonD %></span><img src="/images/blackboard.png" alt=""></button>
+                        </div>
+                    </div>
+                <%})%>
+            <% } %>
+        </div>
+        <div class="post-coment">
+            <div class="login-form">
+                <form action="/post/<%= post._id %>/coment" method="post">
+                    <div>
+                        <label for="coment">Comenta:</label>
+                    </div>
+                    <div>
+                        <textarea name="coment"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Comentar!">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="post-coment">
-    <form action="/post/<%= post._id %>/coment" method="post">
-        <label for="coment">Comenta:</label>
-        <textarea name="coment"></textarea>
-        <input type="submit" value="Comentar!">
-    </form>
-    </div>
-  </div>
+</div>
+
+<script src="/javascripts/axios.js"></script>
+<script>
+  const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        axios.post('/api/coment/likes', {
+          postId: `${button.id}`,
+          button: `${button.value}`
+        })
+          .then(({ data }) => {
+            const span = button.querySelector('span')
+            span.innerHTML = data
+          })
+          .catch(error => {
+            console.log(error);
+          })
+      })
+    })
+</script>

@@ -1,26 +1,50 @@
 <%- include partials/navbar %>
 <div class="main-container">
   <h1>Welcome to IronFack</h1>
+  <%- include partials/errors %>
   <div class="post-container">
     <% post.forEach(post => { %>
     <div class="post">
-      <div>
-        <img src="<%= post.author.avatar %>">
+      <div class="index-post-section">
+        <img class="index-post-avatar" src="<%= post.author.avatar %>">
         <div class="post-title"><a href="/post/<%= post._id %>"><%= post.title %></a></div>
       </div>
       <div class="info-container">
         <p class="main-author">By: </p>
         <a class="author-link" href="/profile/<%= post.author._id%>"><%= post.author.username%></a>
-        <p class="date"><%= post.date %></p>
+        <p ><%= post.date %> 
+            <span class="coment-lenght"><%= post.comentNumber %></span>
+            <img class="coment-img" src="/images/chat.png" alt="">
+        </p>
         <hr>
       </div>
       <div class="post-text"><%= post.text %></div>
       <hr>
       <div class="post-buttons">
-          <button name="button" value="a" id="<%= post._id %>"><span><%= post.hateButtons.buttonA %></span><img src="/images/pizza.png" alt=""></button>
-          <button name="button" value="b" id="<%= post._id %>"><span><%= post.hateButtons.buttonB %></span><img src="/images/balloon.png" alt=""></button>
-          <button name="button" value="c" id="<%= post._id %>"><span><%= post.hateButtons.buttonC %></span><img src="/images/baby-cry.png" alt=""></button>
-          <button name="button" value="d" id="<%= post._id %>"><span><%= post.hateButtons.buttonD %></span><img src="/images/blackboard.png" alt=""></button>
+        <div class="icon-hater">
+          <button name="button" value="a" id="<%= post._id %>">
+            <span class="button-score"><%= post.hateButtons.buttonA %></span>
+            <img class="button-img" src="/images/pizza.png" alt="">
+          </button>
+        </div>
+        <div class="icon-hater">
+          <button name="button" value="b" id="<%= post._id %>">
+            <span class="button-score"><%= post.hateButtons.buttonB %></span>
+            <img class="button-img" src="/images/balloon.png" alt="">
+          </button>
+        </div>
+        <div class="icon-hater">
+          <button name="button" value="c" id="<%= post._id %>">
+            <span class="button-score"><%= post.hateButtons.buttonC %></span>
+            <img class="button-img" src="/images/baby-cry.png" alt="">
+          </button>
+        </div>
+        <div class="icon-hater">
+          <button name="button" value="d" id="<%= post._id %>">
+            <span class="button-score"><%= post.hateButtons.buttonD %></span>
+            <img class="button-img" src="/images/blackboard.png" alt="">
+          </button>
+        </div>
       </div>
     </div>
     <% }) %>

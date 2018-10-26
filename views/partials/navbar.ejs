@@ -1,24 +1,28 @@
 <div >
   <div class="navbar">
-    <div class="nav-elements">
-      <img class="nav-avatar" src="<%= currentUser.avatar %>">
+    <div class="nav-container">
+      <div class="nav-elements">
+        <img class="nav-avatar" src="<%= currentUser.avatar %>">
+      </div>
+      <div class="nav-elements">
+        <img class="nav-logo-image" src="/images/ironLogo-block.png" alt="logo-iron-fack">
+      </div>
+      <div class="menu nav-elements">
+        <i class="fas fa-bars"></i>
+      </div> 
     </div>
-    <div class="nav-elements">
-      <img class="nav-logo-image" src="/images/ironLogo-block.png" alt="logo-iron-fack">
+    <div class="navbar-options">
+      <div>
+        <h2>Hi <%= currentUser.username %> !</h2>
+      </div>
+      <a href="/post/new">Nueva entrada</a>
+      <a href="/profile/<%= currentUser._id %>">Ver tu perfil</a>
+      <a href="/profile/<%= currentUser._id %>/edit">Edita tu perfil</a>
+      <form action="/auth/logout" method="post">
+        <input type="submit" value="logout">
+      </form>
+      <i class="fas fa-sort-up"></i>
     </div>
-    <div class="menu nav-elements">
-      <i class="fas fa-bars"></i>
-    </div> 
-  </div>
-  <div class="navbar-options">
-    <div>
-      <h2>Hi <%= currentUser.username %> !</h2>
-    </div>
-    <a href="/post/new">Nueva entrada</a>
-    <a href="/profile/<%= currentUser._id %>">Ver tu perfil</a>
-    <a href="/profile/<%= currentUser._id %>/edit">Edita tu perfil</a>
-    <a href="/auth/logout">Logout</a>
-    <i class="fas fa-sort-up"></i>
   </div>
 </div>
 

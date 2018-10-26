@@ -1,5 +1,5 @@
 const express = require('express');
-const Post = require('../models/crypost');
+const Post = require('../models/post');
 const Coment = require('../models/coment');
 const router = express.Router();
 const middlewares = require('../middleware/middlewares');
@@ -8,7 +8,7 @@ const ObjectId = mongoose.Types.ObjectId;
 
 // create a new post
 router.get('/new', middlewares.userExist, (req, res, next) => {
-  res.render('posts/newpost', { messages: req.flash('error') });
+  return res.render('posts/newpost', { messages: req.flash('error') });
 });
 
 router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
@@ -17,40 +17,30 @@ router.post('/new', middlewares.infoPostIsEmpty, (req, res, next) => {
   post.author = ObjectId(userId);
   const f = new Date();
   post.date = `el ${f.getDate()}/${f.getMonth()}/${f.getFullYear()} a las ${f.getHours()}:${f.getMinutes()}`;
-  post.hateButtons = {
-    buttonA: 0,
-    buttonB: 0,
-    buttonC: 0,
-    buttonD: 0
-  };
 
   const crypost = new Post(post);
   crypost.save()
     .then(() => {
-      res.redirect('/');
+      req.flash('info', 'Tu lloriqueo se ha subido correctamente');
+      return res.redirect('/', { messages: req.flash('info') });
     })
-    .catch((error) => {
-      next(error);
-    });
+    .catch(next);
 });
 
 // get posts
 router.get('/:id', middlewares.userExist, (req, res, next) => {
   const id = req.params.id;
   // current usser
-  const userId = req.session.currentUser._id;
   Post.findById(id)
     .populate('author')
     .then(post => {
       Coment.find({ post: id })
         .populate('author')
         .then(coments => {
-          res.render('posts/postdetails', { post, coments });
+          return res.render('posts/postdetails', { post, coments });
         });
     })
-    .catch(error => {
-      next(error);
-    });
+    .catch(next);
 });
 
 // delete
@@ -58,11 +48,9 @@ router.get('/:id/delete', middlewares.userExist, (req, res, next) => {
   const id = req.params.id;
   Post.findByIdAndRemove(id)
     .then(result => {
-      res.redirect('/');
+      return res.redirect('/');
     })
-    .catch((error) => {
-      next(error);
-    });
+    .catch(next);
 });
 
 // edit
@@ -70,12 +58,9 @@ router.get('/:id/edit', middlewares.userExist, (req, res, next) => {
   const id = req.params.id;
   Post.findById(id)
     .then(post => {
-      console.log(post);
-      res.render('posts/editpost', { post });
+      return res.render('posts/editpost', { post });
     })
-    .catch((error) => {
-      next(error);
-    });
+    .catch(next);
 });
 
 router.post('/:id/edit', middlewares.userExist, (req, res, next) => {
@@ -83,11 +68,9 @@ router.post('/:id/edit', middlewares.userExist, (req, res, next) => {
   const id = req.params.id;
   Post.findByIdAndUpdate(id, post)
     .then((result) => {
-      res.redirect('/');
+      return res.redirect('/');
     })
-    .catch(error => {
-      console.log(error);
-    });
+    .catch(next);
 });
 
 router.post('/:id/coment', (req, res, next) => {
@@ -98,17 +81,20 @@ router.post('/:id/coment', (req, res, next) => {
   coment.post = ObjectId(postId);
   const f = new Date();
   coment.date = `el ${f.getDate()}/${f.getMonth()}/${f.getFullYear()} a las ${f.getHours()}:${f.getMinutes()}`;
-  coment.hateButtons = {
-    buttonA: 0,
-    buttonB: 0,
-    buttonC: 0,
-    buttonD: 0
-  };
 
   const comentary = new Coment(coment);
   comentary.save()
     .then(() => {
-      res.redirect(`/post/${postId}`);
+      Post.findById(postId)
+        .then(post => {
+          post.comentNumber++;
+          post.save()
+            .then(result => {
+              return res.redirect(`/post/${postId}`);
+            })
+            .catch(next);
+        })
+        .catch(next);
     })
     .catch(next);
 });

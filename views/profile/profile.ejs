@@ -1,41 +1,47 @@
-<div class="profile">
-  <img src="<%= user.avatar %>">
-  <h1 class="username"><%= user.username %></h1>
-  <div class="description">
-    <h2>Descripción</h2>
-    <% if(user.description){ %>
-      <p><%= user.description %></p>
-    <% } else { %>
-      <p>Este usuario aún no tiene descripción</p>
-    <% } %>
+<%- include ../partials/navbar %>
+<div class="main-container">
+  <div class="profile-header">
+    <h1>Profile de <%= user.username %></h1>
+    <a class="new_post_back-button" href="/"> < Back</a>
   </div>
-  <div class="cohort">
-    <h2>Cohort</h2>
-    <% if(user.cohort){ %>
-      <%= user.cohort %>
-    <% } else { %>
-      <p>Este usuario no ha especificado Cohort</p>
-    <% } %>
-  </div>
-  <div class="campus">
-    <h2>Campus</h2>
-    <% if(user.campus){ %>
-      <p><%= user.campus %></p>
-    <% } else { %>
-      <p>Este usuario no ha especificado Campus</p>
-    <% } %>
-  </div>
-  <div class="user-posts">
-    <h2>Lloriqueos</h2>
-    <% if(post) { %>
-      <% post.forEach(post => {%>
-      <a href="/post/<%= post._id %>"><%= post.title %></a>
-      <% }) %>
-    <% } else { %>
-      <p>El usuario no ha escrito ningún post</p>
-    <% } %>
-  </div>
-  <div class="haterecibed">
+  <div class="login">
+    <img class="profile-img" src="<%= user.avatar %>">
+    <div class="login-form">
+      <form action="/auth/login" method="post">
+        <!-- description -->
+        <% if(user.description){ %>
+          <input class="login-input-description-field-readonly" type="text" value="<%= user.description %>" name="title" readonly>
+        <% } else { %>
+          <input class="login-input-description-field-readonly" type="text"  placeholder="Description" name="title" readonly>
+        <% } %>
 
+        <!--cohort -->  
+        <% if(user.cohort){ %>
+          <input class="login-input-field-readonly" type="text" value="<%= user.cohort %>" name="title" readonly>
+        <% } else { %>
+        <input class="login-input-field-readonly" type="text"  placeholder="Cohort" name="title" readonly>
+        <% } %>
+
+        <!--campus -->
+        <% if(user.campus){ %>
+          <input class="login-input-field-readonly" type="text" value="<%= user.campus %>" name="title" readonly>
+        <% } else { %>
+          <input class="login-input-field-readonly" type="text" placeholder="Campus" name="title" readonly>
+        <% } %>
+      </form>
+    </div>
   </div>
+</div>
+<div class="profile-link">
+  <% if(post) { %>
+    <% post.forEach(post => {%>
+    <ul>
+      <li class="post-link-list">
+        <a href="/post/<%= post._id %>"><%= post.title %></a>
+      </li>
+    </ul>
+  <% }) %>
+  <% } else { %>
+    <p class="login-register-link">El usuario no ha escrito ningún post</p>
+  <% } %>
 </div>

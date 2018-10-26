@@ -7,7 +7,6 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const axios = require('axios');
 require('dotenv').config();
 
 const indexRouter = require('./routes/index');
