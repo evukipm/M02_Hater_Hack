@@ -1,6 +1,6 @@
-let openButton = document.querySelector('div.menu div.nav-elements');
+let openButton = document.querySelector('i.fa-bars');
 let navbar = document.querySelector('div.navbar');
-let closeButton = document.querySelector('div.fas div.fa-sort-up');
+let closeButton = document.querySelector('i.fa-sort-up');
 
 openButton.addEventListener('click', openNav);
 closeButton.addEventListener('click', closeNav);
