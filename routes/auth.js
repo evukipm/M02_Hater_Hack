@@ -15,7 +15,7 @@ router.post('/register', middlewares.isEmpty, (req, res, next) => {
 
   Hater.find({ username: name })
     .then(user => {
-      if (user) {
+      if (user.username === name) {
         req.flash('error', 'Lo sentimos, ese usuario ya existe');
         return res.redirect('/auth/register');
       } else {

@@ -8,7 +8,8 @@ router.get('/', middlewares.userExist, (req, res, next) => {
   Post.find()
     .populate('author')
     .then(post => {
-      res.render('index', { post });
+      console.log(post);
+      return res.render('index', { post });
     })
     .catch(next);
 });

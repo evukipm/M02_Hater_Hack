@@ -1,8 +1,8 @@
 <%- include ../partials/navbar %>
 <div class="main-container">
     <div class="profile-header">
-        <h1>Post detail</h1>
-        <a class="new_post_back-button" href="/"> < Back</a>
+        <h1>Detalle del post</h1>
+        <a class="new_post_back-button" href="/"> < Atrás</a>
     </div>
     <div class="postdetail">
         <div class="index-post-section">
@@ -10,19 +10,23 @@
             <div class="post-title"> <%= post.title %> </a></div>
         </div>
         <div class="info-container">
-            <p class="main-author">By: </p>
-            <p class="author-link"> <%= post.author.username %> </p>
+            <p class="main-author">Por: </p>
+            <p class="author-link"><a href="/profile/<%= post.author._id %>"><%= post.author.username %></a></p>
             <p class="date"><%= post.date %></p>
             <hr>
         </div>
         <div class="post-text"><%= post.text %></div>
         <hr>
-        <div class="post-buttons">
-            <% if(currentUser === post.author._id){ %>
-                <div><a href="/post/<%= post._id %>/edit">Edit</a></div>
-                <div><a href="/post/<%= post._id %>/delete">Delete</a></div>
-            <% } %>
-        </div>
+        <% if(currentUser._id == post.author._id){ %>
+            <div class="post-buttons">
+                <div><a href="/post/<%= post._id %>/edit">Editar</a></div>
+                <div>
+                    <form action="/post/<%= post._id %>/delete" method="post">
+                        <input type="submit" value="Eliminar">
+                    </form>
+                </div>
+            </div>
+        <% } %>
         <div class="post-coment-list">
             <% if(coments){%>
                 <% coments.forEach(coment => {%>
@@ -31,7 +35,7 @@
                             <img src="<%= coment.author.avatar %>">
                         </div>
                         <div class="coment-container">
-                            <p class="coment-main-author">By: </p>
+                            <p class="coment-main-author">Por: </p>
                             <p class="coment-author-link"> <%= coment.author.username %> </p>
                             <p class="coment-date"><%= coment.date %></p>
                             <hr>

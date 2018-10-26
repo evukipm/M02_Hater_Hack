@@ -11,7 +11,10 @@
       <div class="info-container">
         <p class="main-author">By: </p>
         <a class="author-link" href="/profile/<%= post.author._id%>"><%= post.author.username%></a>
-        <p ><%= post.date %></p>
+        <p ><%= post.date %> 
+            <span class="coment-lenght"><%= post.comentNumber %></span>
+            <img class="coment-img" src="/images/chat.png" alt="">
+        </p>
         <hr>
       </div>
       <div class="post-text"><%= post.text %></div>

@@ -7,6 +7,7 @@ const cryPostSchema = new Schema({
     type: ObjectId,
     ref: 'Hater'
   },
+  comentNumber: { type: Number, default: 0 },
   title: String,
   text: String,
   date: String,
