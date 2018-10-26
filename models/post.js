@@ -5,7 +5,7 @@ const ObjectId = Schema.Types.ObjectId;
 const cryPostSchema = new Schema({
   author: {
     type: ObjectId,
-    ref: 'Hater'
+    ref: 'User'
   },
   comentNumber: { type: Number, default: 0 },
   title: String,

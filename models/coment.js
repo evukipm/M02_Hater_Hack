@@ -5,7 +5,7 @@ const ObjectId = Schema.Types.ObjectId;
 const comentSchema = new Schema({
   author: {
     type: ObjectId,
-    ref: 'Hater'
+    ref: 'User'
   },
   post: {
     type: ObjectId,
