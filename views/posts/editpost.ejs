@@ -1,8 +1,11 @@
-<form action="/post/<%= post._id %>/edit" method="post">
-  <label for="title">Título</label>
-  <input type="text" value="<%= post.title %>" name="title">
-  <label for="text">Text</label>
-  <textarea name="text"> <%= post.text %> </textarea>
-  <input type="submit" value="Llorar">
-  <a href="/post/<%= post._id %>">Back</a>
-</form>
+<%- include ../partials/navbar %>
+<div class="main-container">
+  <form action="/post/<%= post._id %>/edit" method="post">
+    <label for="title">Título</label>
+    <input type="text" value="<%= post.title %>" name="title">
+    <label for="text">Text</label>
+    <textarea name="text"> <%= post.text %> </textarea>
+    <input type="submit" value="Llorar">
+    <a href="/post/<%= post._id %>">Back</a>
+  </form>
+</div>

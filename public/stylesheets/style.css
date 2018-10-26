@@ -174,6 +174,7 @@ a {
 /** ---- main ---- */
 .main-container{
   margin-top: 100px;
+  transition:1.5s;
 }
 
 .main-container h1{
@@ -197,6 +198,17 @@ a {
   border-radius: 15px;
   box-shadow:2px 2px 4px var(--azul-osc);
 }
+
+.postdetail{
+  font-size:16px;
+  background:var(--blanco);
+  margin-top:120px;
+  color:black;
+  padding:15px;
+  border-radius: 15px;
+  box-shadow:2px 2px 4px var(--azul-osc);
+}
+
 
 .index-post-section {
   display: flex;
@@ -307,13 +319,18 @@ a {
   top: 0;
   background: var(--negro-navbar);
   overflow:hidden;
-  transition:1.5s;
+  transition:1.5s;  
+  height: 74px;
+}
+
+.nav-container {
   display: flex;
-  padding-top: 10px;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  padding: 10px 0;
 }
+
 
 .nav-avatar {
   height: 50px;
@@ -330,7 +347,6 @@ a {
 .navbar-options {
   display: flex;
   flex-direction: column;
-  margin-top: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -352,13 +368,22 @@ a {
   color:var(--blanco);
 }
 
+.navbar-options i:hover{
+  color:var(--blanco);
+}
+
 .menu i {
   color: white;
   font-size: 30px;
 }
 
 .open{
-  height:150px;
+  height:300px;
+  transition:1.5s;
+}
+
+.move {
+  margin-top:300px;
   transition:1.5s;
 }
 
