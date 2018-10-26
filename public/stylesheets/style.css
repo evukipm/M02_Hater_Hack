@@ -48,6 +48,17 @@ a {
   outline:none;
 }
 
+.profile-link a{
+  display:block;
+  font-size:14px;
+  padding:10px;
+  width: 90%;
+}
+
+.post-link-list {
+  text-decoration: none;
+}
+
 .iron-logo {
   margin-top:30px;
   width: 230px;
@@ -73,6 +84,12 @@ a {
   height: 20px;
   border-radius: 5px;
   width: 90%
+}
+
+select {
+  height: 40px;
+  border-radius: 5px;
+  width: 95%
 }
 
 .login-input-field-readonly {
@@ -321,6 +338,7 @@ a {
   overflow:hidden;
   transition:1.5s;  
   height: 74px;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -503,5 +521,40 @@ a {
   padding: 10px;
 } */
 
+/*-- edit --*/
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
 
+.inputfile + label {
+  background-color: var(--azul-buttons-corp);
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 90%;
 
+  display: block;
+  margin: 5px auto 20px;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: red;
+}
+
+.select-style {
+  background-color: var(--azul-buttons-corp);
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 90%;
+}
