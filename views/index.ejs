@@ -1,7 +1,7 @@
 <%- include partials/navbar %>
 <div class="main-container">
   <h1>Welcome to IronFack</h1>
-  <%- include partials/errors %>
+  <div class="info"><%- include partials/errors %></div>
   <div class="post-container">
     <% post.forEach(post => { %>
     <div class="post">
@@ -10,14 +10,13 @@
         <div class="post-title"><a href="/post/<%= post._id %>"><%= post.title %></a></div>
       </div>
       <div class="info-container">
-        <p class="main-author">By: </p>
-        <a class="author-link" href="/profile/<%= post.author._id%>"><%= post.author.username%></a>
-        <p ><%= post.date %> 
-            <span class="coment-lenght"><%= post.comentNumber %></span>
-            <img class="coment-img" src="/images/chat.png" alt="">
+        <p class="main-author">By: <a class="author-link" href="/profile/<%= post.author._id%>"><%= post.author.username%></a></p>
+        <p ><%= post.date %> </p>
+        <p>
+        <span class="coment-lenght"><img class="coment-img" src="/images/chat.png" alt=""><%= post.comentNumber %></span>
         </p>
-        <hr>
       </div>
+      <hr>
       <div class="post-text"><%= post.text %></div>
       <hr>
       <div class="post-buttons">
