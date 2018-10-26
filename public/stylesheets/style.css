@@ -300,11 +300,6 @@ a {
   font-size: 16px;
 }
 
-.move{
-  margin-left:100px;
-  transition:1.5s;
-}
-
 /** ---- navbar ---- */
 .navbar{
   position:fixed;
@@ -363,7 +358,7 @@ a {
 }
 
 .open{
-  width:150px;
+  height:150px;
   transition:1.5s;
 }
 
