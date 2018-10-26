@@ -223,11 +223,13 @@ select {
 .postdetail{
   font-size:16px;
   background:var(--blanco);
-  margin-top:120px;
   color:black;
   padding:15px;
   border-radius: 15px;
   box-shadow:2px 2px 4px var(--azul-osc);
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 80%;
 }
 
 
@@ -252,6 +254,8 @@ select {
 }
 
 .coment-avatar {
+  display: flex;
+  align-items: center;
   width: 40px;
   height: 40px; 
   margin-right: 20px;
@@ -267,10 +271,19 @@ select {
 .post-title {
   font-size: 25px;
   text-decoration: none;
+  
 }
+
+.post-title-coment {
+  font-size: 18px;
+  text-decoration: none;
+  color: #007db7;
+}
+
+
 .info-container img{
   height:12px;
-  padding-right:10px;
+  padding-right:5px;
 }
 .coment-lenght{
   text-align:right;
@@ -305,10 +318,16 @@ select {
 }
 
 .post-buttons{
-  margin-top: 30px;
+  margin-top: 10px;
   display:flex;
-  justify-content: center;
   align-items: center;
+}
+
+.post-buttons a, input {
+
+  text-decoration: none;
+  font-size: 14px;
+  color:var(--azul-buttons-corp);
 }
 
 .icon-hater {
@@ -329,10 +348,32 @@ select {
   background:none;
   height:25px;
 }
+
 .post-buttons label{
   height:15px;
   padding:5px;
 }
+
+.coment{
+  margin-bottom: 30px;
+}
+
+.post-coment {
+  display:block;
+  margin:5px auto 20px;
+  padding:10px;
+  font-size:14px;
+  border:none;
+  outline:none;
+}
+
+.post-detail-title {
+  margin-top: 20px;
+}
+
+
+
+
 
 .info-container p {
   display: inline-block;

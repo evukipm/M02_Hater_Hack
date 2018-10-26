@@ -2,7 +2,7 @@
 <div class="main-container">
     <div class="profile-header">
         <h1>Detalle del post</h1>
-        <a class="new_post_back-button" href="/"> < Atrás</a>
+        <a class="new_post_back-button" href="/"> < Volver</a>
     </div>
     <div class="postdetail">
         <div class="index-post-section">
@@ -13,13 +13,14 @@
             <p class="main-author">Por: </p>
             <p class="author-link"><a href="/profile/<%= post.author._id %>"><%= post.author.username %></a></p>
             <p class="date"><%= post.date %></p>
-            <hr>
         </div>
+        <hr>
         <div class="post-text"><%= post.text %></div>
         <hr>
         <% if(currentUser._id == post.author._id){ %>
             <div class="post-buttons">
-                <div><a href="/post/<%= post._id %>/edit">Editar</a></div>
+                <div>
+                    <a href="/post/<%= post._id %>/edit">Editar</a></div>
                 <div>
                     <form action="/post/<%= post._id %>/delete" method="post">
                         <input type="submit" value="Eliminar">
@@ -27,16 +28,15 @@
                 </div>
             </div>
         <% } %>
-        <div class="post-coment-list">
-            <% if(coments){%>
+        <% if(coments){%>
+            <div class="postdetail">
                 <% coments.forEach(coment => {%>
                     <div class="coment">
                         <div class="coment-avatar">
-                            <img src="<%= coment.author.avatar %>">
+                            <img class="post-avatar" src="<%= coment.author.avatar %>">
+                            <p class="post-title-coment"> <%= coment.author.username %> </p>
                         </div>
                         <div class="coment-container">
-                            <p class="coment-main-author">Por: </p>
-                            <p class="coment-author-link"> <%= coment.author.username %> </p>
                             <p class="coment-date"><%= coment.date %></p>
                             <hr>
                         </div>
@@ -50,26 +50,31 @@
                             <button name="button" value="c" id="<%= coment._id %>"><span><%= coment.hateButtons.buttonC %></span><img src="/images/baby-cry.png" alt=""></button>
                             <button name="button" value="d" id="<%= coment._id %>"><span><%= coment.hateButtons.buttonD %></span><img src="/images/blackboard.png" alt=""></button>
                         </div>
+                        <hr>
                     </div>
                 <%})%>
+             </div>
             <% } %>
-        </div>
-        <div class="post-coment">
+    </div>
+    <div class="login">
             <div class="login-form">
                 <form action="/post/<%= post._id %>/coment" method="post">
-                    <div>
-                        <label for="coment">Comenta:</label>
+                    <div class="post-detail-title">
+                        <label class="login-register-link" for="coment">Comenta:</label>
                     </div>
                     <div>
-                        <textarea name="coment"></textarea>
+                        <textarea class="login-input-field" name="coment"></textarea>
                     </div>
                     <div>
+                    
+                        <button class="newpost-login-buton-submit" type="submit">Comentar</button>
+                        <!--
                         <input type="submit" value="Comentar!">
+                        -->
                     </div>
                 </form>
             </div>
         </div>
-    </div>
 </div>
 
 <script src="/javascripts/axios.js"></script>
