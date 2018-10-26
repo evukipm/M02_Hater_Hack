@@ -3,9 +3,62 @@
   <h1>Profile de <%= user.username %></h1>
   <a class="new_post_back-button" href="/"> < Back</a>
 </div>
-<div class="profile">
+<div class="login">
+  <img class="profile-img" src="<%= user.avatar %>">
+  <div class="login-form">
+    <form action="/auth/login" method="post">
+      <!-- description -->
+      <% if(user.description){ %>
+        <input class="login-input-description-field-readonly" type="text" value="<%= user.description %>" name="title" readonly>
+      <% } else { %>
+        <input class="login-input-description-field-readonly" type="text"  placeholder="Description" name="title" readonly>
+      <% } %>
+
+      <!--cohort -->  
+      <% if(user.cohort){ %>
+        <input class="login-input-field-readonly" type="text" value="<%= user.cohort %>" name="title" readonly>
+      <% } else { %>
+      <input class="login-input-field-readonly" type="text"  placeholder="Cohort" name="title" readonly>
+      <% } %>
+
+      <!--campus -->
+      <% if(user.campus){ %>
+        <input class="login-input-field-readonly" type="text" value="<%= user.campus %>" name="title" readonly>
+      <% } else { %>
+        <input class="login-input-field-readonly" type="text" placeholder="Campus" name="title" readonly>
+       <% } %>
+       
+      <!--list of posts -->
+      <% if(post) { %>
+        <% post.forEach(post => {%>
+          <a href="/post/<%= post._id %>"><%= post.title %></a>
+        <% }) %>
+      <% } else { %>
+        <p>El usuario no ha escrito ningún post</p>
+      <% } %>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+ 
+
+
+
+<!--
+<%- include ../partials/navbar %>
+<div class="profile-header">
+  <h1>Profile de <%= user.username %></h1>
+  <a class="new_post_back-button" href="/"> < Back</a>
+</div>
+<div class="login">
   <img src="<%= user.avatar %>">
   <h1 class="username"><%= user.username %></h1>
+  
   <div class="description">
     <h2>Descripción</h2>
     <% if(user.description){ %>
@@ -44,3 +97,4 @@
 
   </div>
 </div>
+-->
