@@ -53,9 +53,15 @@
         <div class="post-coment">
             <div class="login-form">
                 <form action="/post/<%= post._id %>/coment" method="post">
-                    <label for="coment">Comenta:</label>
-                    <textarea name="coment"></textarea>
-                    <input type="submit" value="Comentar!">
+                    <div>
+                        <label for="coment">Comenta:</label>
+                    </div>
+                    <div>
+                        <textarea name="coment"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Comentar!">
+                    </div>
                 </form>
             </div>
         </div>
